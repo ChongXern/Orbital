@@ -1,2 +1,2 @@
 # Orbital
-Orbital Project for creating mobile game based on real life campus locations. 
+Orbital Project for creating a mobile game based on real life campus locations. 
