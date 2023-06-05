@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://v6su0qeeq1rh"
+path="res://.godot/imported/npc_7_3.png-cffce3c013eec61b62caa1a8f5b2953c.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://sprite animations/npc 7/npc_7_3.png"
+dest_files=["res://.godot/imported/npc_7_3.png-cffce3c013eec61b62caa1a8f5b2953c.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1
