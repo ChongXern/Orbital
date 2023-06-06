@@ -64,7 +64,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4inbj"]
 radius = 104.0
-height = 400.0
+height = 218.0
 
 [node name="ally" type="RigidBody2D"]
 gravity_scale = 0.0

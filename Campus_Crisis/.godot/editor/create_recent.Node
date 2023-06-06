@@ -1,0 +1,4 @@
+CollisionShape2D
+Area2D
+RigidBody2D
+CharacterBody2D
