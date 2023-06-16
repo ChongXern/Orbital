@@ -63,24 +63,35 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4inbj"]
+<<<<<<< Updated upstream:PlsWork/ally.tscn
 radius = 104.0
 height = 400.0
+=======
+radius = 91.0
+height = 374.0
+>>>>>>> Stashed changes:Campus_Crisis/ally.tscn
 
-[node name="ally" type="RigidBody2D"]
-gravity_scale = 0.0
-contact_monitor = true
-lock_rotation = true
+[node name="ally" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
+collision_layer = 2
 script = ExtResource("1_dhqx0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+y_sort_enabled = true
 position = Vector2(2000, 1304)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_y3boa")
+frame = 12
+frame_progress = 0.800513
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-0.000244141, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1968, 1312)
+position = Vector2(1976, 1304)
 shape = SubResource("CapsuleShape2D_4inbj")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
