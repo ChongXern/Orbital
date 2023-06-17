@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 extends Label
 #notifies main node that button has been pressed
 signal pressed_tag
@@ -27,3 +28,6 @@ func _on_message_timer_timeout():
 
 func _on_pressed_tag():
 	show_found_ally()
+=======
+
+>>>>>>> origin/testing
