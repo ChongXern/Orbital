@@ -1,35 +1,35 @@
-[gd_scene load_steps=60 format=3 uid="uid://bxm5dcup60y4d"]
+[gd_scene load_steps=60 format=3 uid="uid://27366q17wqux"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_218ld"]
-[ext_resource type="PackedScene" uid="uid://c3dny2hrdhg6v" path="res://player.tscn" id="1_vur2i"]
-[ext_resource type="Texture2D" path="res://clb assets resized/ground floor tile 1.png" id="3_4exas"]
-[ext_resource type="Texture2D" path="res://clb assets resized/red couch 1 right.png" id="4_2mm06"]
-[ext_resource type="Texture2D" path="res://clb assets resized/ground floor tile 2.png" id="4_a141y"]
-[ext_resource type="Texture2D" path="res://clb assets resized/pillar.png" id="5_tci0y"]
-[ext_resource type="Texture2D" path="res://clb assets resized/red couch 2 left.png" id="5_ytot2"]
-[ext_resource type="Texture2D" path="res://clb assets resized/red couch 2 right.png" id="6_uw1a8"]
-[ext_resource type="Texture2D" path="res://clb assets resized/pillar couch left.png" id="6_y0l22"]
-[ext_resource type="Texture2D" path="res://clb assets resized/pillar couch right.png" id="7_1sckp"]
-[ext_resource type="Texture2D" path="res://clb assets resized/rainbow couch.png" id="7_etg0m"]
-[ext_resource type="Texture2D" path="res://clb assets resized/door.png" id="8_6si5y"]
-[ext_resource type="Texture2D" path="res://clb assets resized/ground floor tile 3.png" id="8_dfabf"]
-[ext_resource type="Texture2D" path="res://clb assets resized/nus_coop.png" id="8_ln6xl"]
-[ext_resource type="Texture2D" path="res://clb assets resized/mini table btwn couches.png" id="9_ymysv"]
-[ext_resource type="Texture2D" path="res://clb assets resized/yellow couch left.png" id="10_sro45"]
-[ext_resource type="Texture2D" path="res://clb assets resized/yellow couch right.png" id="11_6lpyy"]
-[ext_resource type="Texture2D" path="res://clb assets resized/water filler.png" id="12_duxi0"]
-[ext_resource type="Texture2D" path="res://clb assets resized/plant.png" id="12_usat8"]
-[ext_resource type="Texture2D" path="res://clb assets resized/sign.png" id="14_868x5"]
-[ext_resource type="Texture2D" path="res://clb assets resized/dustbin.png" id="14_gpotf"]
-[ext_resource type="Texture2D" path="res://clb assets resized/mini couch 4.png" id="15_gsgoa"]
-[ext_resource type="Texture2D" path="res://clb assets resized/red couch 1 right copy.png" id="15_mjxjh"]
-[ext_resource type="Texture2D" path="res://clb assets resized/mini couch 1.png" id="16_tg7b2"]
-[ext_resource type="Texture2D" path="res://clb assets resized/mini couch 3.png" id="17_quaiw"]
-[ext_resource type="PackedScene" uid="uid://c340a72rbnq7b" path="res://ally.tscn" id="25_tlhu5"]
-[ext_resource type="PackedScene" uid="uid://b682pdg6udkt4" path="res://hud.tscn" id="27_5kq3n"]
-[ext_resource type="PackedScene" uid="uid://dwp4v6qka3c13" path="res://npc2.tscn" id="28_b5oh3"]
-[ext_resource type="PackedScene" uid="uid://7s53eodl482k" path="res://npc_3.tscn" id="29_o2yaa"]
-[ext_resource type="PackedScene" uid="uid://di42y37gpwyk0" path="res://npc_4.tscn" id="30_p1uyv"]
+[ext_resource type="PackedScene" uid="uid://cfqusdtmjtapf" path="res://player.tscn" id="1_vur2i"]
+[ext_resource type="Texture2D" uid="uid://bnl18msi2kn3b" path="res://clb assets resized/ground floor tile 1.png" id="3_4exas"]
+[ext_resource type="Texture2D" uid="uid://eyivoexcbl3m" path="res://clb assets resized/red couch 1 right.png" id="4_2mm06"]
+[ext_resource type="Texture2D" uid="uid://xk6f1wudmpsp" path="res://clb assets resized/ground floor tile 2.png" id="4_a141y"]
+[ext_resource type="Texture2D" uid="uid://d1epu4id16fkq" path="res://clb assets resized/pillar.png" id="5_tci0y"]
+[ext_resource type="Texture2D" uid="uid://bjjghwearqswv" path="res://clb assets resized/red couch 2 left.png" id="5_ytot2"]
+[ext_resource type="Texture2D" uid="uid://cn10s88vtacaa" path="res://clb assets resized/red couch 2 right.png" id="6_uw1a8"]
+[ext_resource type="Texture2D" uid="uid://b36c0ugvseb3j" path="res://clb assets resized/pillar couch left.png" id="6_y0l22"]
+[ext_resource type="Texture2D" uid="uid://cwy3t7ql8nen5" path="res://clb assets resized/pillar couch right.png" id="7_1sckp"]
+[ext_resource type="Texture2D" uid="uid://dj5rkf5ff7yp4" path="res://clb assets resized/rainbow couch.png" id="7_etg0m"]
+[ext_resource type="Texture2D" uid="uid://bwg62j8bnybpw" path="res://clb assets resized/door.png" id="8_6si5y"]
+[ext_resource type="Texture2D" uid="uid://d0vh167wqqq2" path="res://clb assets resized/ground floor tile 3.png" id="8_dfabf"]
+[ext_resource type="Texture2D" uid="uid://dsktgmbegl37b" path="res://clb assets resized/nus_coop.png" id="8_ln6xl"]
+[ext_resource type="Texture2D" uid="uid://qxc2ygil4kme" path="res://clb assets resized/mini table btwn couches.png" id="9_ymysv"]
+[ext_resource type="Texture2D" uid="uid://4xfp3vteehra" path="res://clb assets resized/yellow couch left.png" id="10_sro45"]
+[ext_resource type="Texture2D" uid="uid://1bsrq06s56bb" path="res://clb assets resized/yellow couch right.png" id="11_6lpyy"]
+[ext_resource type="Texture2D" uid="uid://cvlhwqkl1obe5" path="res://clb assets resized/water filler.png" id="12_duxi0"]
+[ext_resource type="Texture2D" uid="uid://do7j6m0pivrso" path="res://clb assets resized/plant.png" id="12_usat8"]
+[ext_resource type="Texture2D" uid="uid://bruh8l5nwg02j" path="res://clb assets resized/sign.png" id="14_868x5"]
+[ext_resource type="Texture2D" uid="uid://c2dbxwl4y7o2g" path="res://clb assets resized/dustbin.png" id="14_gpotf"]
+[ext_resource type="Texture2D" uid="uid://ceu2exfjsr2pq" path="res://clb assets resized/mini couch 4.png" id="15_gsgoa"]
+[ext_resource type="Texture2D" uid="uid://c0j82pjwtbpub" path="res://clb assets resized/red couch 1 right copy.png" id="15_mjxjh"]
+[ext_resource type="Texture2D" uid="uid://5tcr5sirkws5" path="res://clb assets resized/mini couch 1.png" id="16_tg7b2"]
+[ext_resource type="Texture2D" uid="uid://dikm4u2qnva5s" path="res://clb assets resized/mini couch 3.png" id="17_quaiw"]
+[ext_resource type="PackedScene" uid="uid://qeitfgj53ewa" path="res://hud.tscn" id="27_5kq3n"]
+[ext_resource type="PackedScene" uid="uid://cllycj0gpqro1" path="res://ally.tscn" id="27_gjl17"]
+[ext_resource type="PackedScene" uid="uid://ji6mvcx1mdei" path="res://npc2.tscn" id="28_b5oh3"]
+[ext_resource type="PackedScene" uid="uid://tbxahk66road" path="res://npc_3.tscn" id="29_o2yaa"]
+[ext_resource type="PackedScene" uid="uid://ba7wwn7v5n02b" path="res://npc_4.tscn" id="30_p1uyv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ye22a"]
 texture = ExtResource("3_4exas")
@@ -9632,13 +9632,11 @@ curve = SubResource("Curve2D_1xydy")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="npcPaths/Path2D"]
 position = Vector2(7400, 1263)
-rotation = -1.29646
+rotation = -0.00231516
 rotates = false
 loop = false
 
-[node name="ally" parent="npcPaths/Path2D/PathFollow2D" instance=ExtResource("25_tlhu5")]
-position = Vector2(915.345, -2277.12)
-rotation = 1.29646
+[node name="ally" parent="npcPaths/Path2D/PathFollow2D" instance=ExtResource("27_gjl17")]
 
 [node name="Path2D2" type="Path2D" parent="npcPaths"]
 curve = SubResource("Curve2D_bapw3")

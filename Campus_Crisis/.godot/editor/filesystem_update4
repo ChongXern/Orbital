@@ -1,10 +1,6 @@
-res://hud.gd
-res://hud.tscn
-res://player.tscn
 res://ally.tscn
 res://world.tscn
-res://npc2.tscn
-res://npc_3.tscn
-res://npc_4.tscn
-res://global.tscn
 res://world.gd
+res://ally.gd
+res://hud.tscn
+res://npc2.tscn

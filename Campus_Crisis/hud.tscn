@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b682pdg6udkt4"]
+[gd_scene load_steps=7 format=3 uid="uid://qeitfgj53ewa"]
 
 [ext_resource type="Script" path="res://hud.gd" id="1_rp0qk"]
-[ext_resource type="Texture2D" path="res://tick.png" id="2_fblox"]
-[ext_resource type="Texture2D" path="res://cross.png" id="3_m66l0"]
-[ext_resource type="Texture2D" path="res://coins.png" id="4_w4br0"]
-[ext_resource type="Texture2D" path="res://Ally.png" id="5_sogkw"]
-[ext_resource type="Texture2D" path="res://play.png" id="6_oudgg"]
+[ext_resource type="Texture2D" uid="uid://c5n8wkmce0et6" path="res://tick.png" id="2_fblox"]
+[ext_resource type="Texture2D" uid="uid://b8ojxtehmt7nm" path="res://cross.png" id="3_m66l0"]
+[ext_resource type="Texture2D" uid="uid://c5m4bm2jcldf1" path="res://coins.png" id="4_w4br0"]
+[ext_resource type="Texture2D" uid="uid://tn0qoqoyeetk" path="res://Ally.png" id="5_sogkw"]
+[ext_resource type="Texture2D" uid="uid://bnibhf4p2ovin" path="res://play.png" id="6_oudgg"]
 
 [node name="hud" type="CanvasLayer"]
 script = ExtResource("1_rp0qk")
