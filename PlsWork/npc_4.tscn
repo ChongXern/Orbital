@@ -55,7 +55,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c71ig"]
@@ -66,6 +66,8 @@ height = 1446.0
 scale = Vector2(0.2, 0.2)
 collision_layer = 8
 script = ExtResource("1_bwqh0")
+metadata/_edit_horizontal_guides_ = [186.0, -186.0]
+metadata/_edit_vertical_guides_ = [-187.0]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fv4bm")

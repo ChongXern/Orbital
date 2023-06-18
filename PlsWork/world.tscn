@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://bxmaqyaucubwb"]
+[gd_scene load_steps=109 format=3 uid="uid://bxmaqyaucubwb"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_218ld"]
 [ext_resource type="PackedScene" uid="uid://cfqusdtmjtapf" path="res://player.tscn" id="1_vur2i"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://cdydrsy50w7fc" path="res://clb assets resized/table unit quarter.png" id="34_shjil"]
 [ext_resource type="Texture2D" uid="uid://vbbx442c43sk" path="res://clb assets resized/table unit.png" id="35_2sv83"]
 [ext_resource type="Texture2D" uid="uid://fnxuuejomx5v" path="res://clb assets resized/wall_tile.png" id="36_jcm6h"]
+[ext_resource type="PackedScene" uid="uid://dycebnqnm6iv3" path="res://ally_again.tscn" id="37_2qjdf"]
 [ext_resource type="Texture2D" uid="uid://cnwh1g3obbkqn" path="res://clb assets resized/gate thing.png" id="37_b76bi"]
 [ext_resource type="Texture2D" uid="uid://p3706lbgdhr4" path="res://clb assets resized/mini couch 2.png" id="38_loasp"]
 
@@ -2052,6 +2053,12 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 5381, 1637, 0, 0, 0, 0, 4763, 1608, 0, 0, 0, 0, 3792, 1628, 0, 0, 0, 0, 2831, 1742, 0, 0, 0, 0, 2089, 1732, 0, 0, 0, 0, 1157, 1799, 0, 0, 0, 0, 605, 1827, 0, 0, 0, 0, 7, 1256)
 }
 point_count = 8
+
+[sub_resource type="Curve2D" id="Curve2D_lnj6p"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 11411, 2393.17, 0, 0, 0, 0, 65, 2530.67)
+}
+point_count = 2
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ye22a"]
 texture = ExtResource("3_4exas")
@@ -11676,6 +11683,20 @@ loop = false
 z_index = 1
 position = Vector2(-132.977, 46.2842)
 rotation = -3.21085
+
+[node name="Path2D_ally" type="Path2D" parent="npcPaths"]
+position = Vector2(0, 1153.64)
+scale = Vector2(1, 0.545455)
+curve = SubResource("Curve2D_lnj6p")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="npcPaths/Path2D_ally"]
+position = Vector2(11411, 2393.17)
+rotation = 3.12947
+
+[node name="ally" parent="npcPaths/Path2D_ally/PathFollow2D" instance=ExtResource("37_2qjdf")]
+position = Vector2(-0.111328, 9.16699)
+rotation = -3.12947
+scale = Vector2(1, 1.83333)
 
 [node name="hud" parent="." instance=ExtResource("27_5kq3n")]
 
