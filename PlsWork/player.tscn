@@ -69,14 +69,26 @@ collision_mask = 5
 script = ExtResource("1_o1uar")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+y_sort_enabled = true
 position = Vector2(39, 61)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_vcdb4")
 animation = &"running"
-offset = Vector2(0, -10)
+offset = Vector2(2.08165e-12, -40)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(31, 145)
 shape = SubResource("CapsuleShape2D_jleid")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 26000
+limit_bottom = 3120
+limit_smoothed = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
