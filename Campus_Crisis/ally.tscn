@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://i1hblo4f4ik0" path="res://sprite animations/npc 1/npc_1_12.png" id="12_6vyrb"]
 [ext_resource type="Texture2D" uid="uid://cju4i7h2xi7vo" path="res://sprite animations/npc 1/npc_1_13.png" id="13_5e3lw"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_hwk10"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_y3boa"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -58,34 +58,29 @@ animations = [{
 "texture": ExtResource("13_5e3lw")
 }],
 "loop": true,
-"name": &"new_animation",
+"name": &"default",
 "speed": 5.0
 }]
 
-<<<<<<< HEAD
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4inbj"]
 radius = 104.0
 height = 218.0
-=======
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8xcfh"]
-radius = 101.0
-height = 338.0
->>>>>>> origin/testing
 
-[node name="ally" type="Area2D"]
-z_index = 1
-y_sort_enabled = true
-collision_layer = 2
+[node name="ally" type="RigidBody2D"]
+gravity_scale = 0.0
+contact_monitor = true
+lock_rotation = true
 script = ExtResource("1_dhqx0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2000, 1304)
 scale = Vector2(0.2, 0.2)
-sprite_frames = SubResource("SpriteFrames_hwk10")
-animation = &"new_animation"
+sprite_frames = SubResource("SpriteFrames_y3boa")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-23, 23)
-shape = SubResource("CapsuleShape2D_8xcfh")
+[node name="Area2D" type="Area2D" parent="."]
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1968, 1312)
+shape = SubResource("CapsuleShape2D_4inbj")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
