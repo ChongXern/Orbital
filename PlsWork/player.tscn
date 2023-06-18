@@ -54,8 +54,8 @@ animations = [{
 "texture": ExtResource("12_dt6kp")
 }],
 "loop": true,
-"name": &"main character",
-"speed": 5.0
+"name": &"running",
+"speed": 15.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jleid"]
@@ -72,7 +72,7 @@ script = ExtResource("1_o1uar")
 position = Vector2(39, 61)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_vcdb4")
-animation = &"main character"
+animation = &"running"
 offset = Vector2(0, -10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

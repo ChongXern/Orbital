@@ -59,7 +59,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"npc2",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x50tl"]
