@@ -10,7 +10,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var velocity = Vector2.ZERO
-	#control movement of player based on input
 	if Input.is_action_pressed("up"):
 		velocity.y -= 1
 	if Input.is_action_pressed("down"):
@@ -25,8 +24,6 @@ func _process(delta):
 		$AnimatedSprite2D.play()
 	else:
 		$AnimatedSprite2D.stop()
-	
-	#restrict movement of player to within frame bounds
 	position += velocity * delta
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
@@ -40,7 +37,6 @@ func handleInput():
 	var moveDirection = Input.get_vector("left", "right", "up", "down")
 	velocity = moveDirection * speed
 
-#handles interaction between player and assets
 func _physics_process(delta):
 	handleInput()
 	move_and_slide()
