@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 res://player.tscn
 res://ally.tscn
 res://world.tscn
 res://hud.tscn
+=======
+res://ally.tscn
+res://world.tscn
+res://world.gd
+res://ally.gd
+res://hud.tscn
+res://npc2.tscn
+>>>>>>> origin/testing
