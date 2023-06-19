@@ -1,6 +1,9 @@
 extends Node2D
 var score
+var player = null
 
+@onready var hud = $hud
+@onready var game_over = $game_over
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$hud/TagButton.hide() 
@@ -9,6 +12,7 @@ func _ready():
 	$hud/PauseMenu.hide()
 	$hud/ScoreTimer.start()
 	score = 100
+	#player.killed.connect(_on_player_killed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -30,4 +34,7 @@ func _on_ally_exit():
 func _on_hud_message_disappear():
 	$hud/Cross.hide()
 
-
+func _on_player_killed():
+	await get_tree().create_timer(1.5).timeout
+	game_over.visible = true
+	

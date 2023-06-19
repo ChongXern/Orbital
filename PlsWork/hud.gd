@@ -29,9 +29,12 @@ func _on_message_timer_timeout():
 func _on_score_timer_timeout():
 	score -= 1
 	update_score(score)
+	if score == 0:
+		$Score.text = "times up!"
 
 func update_score(score):
 	$Score.text = str(score)
+
 
 
 func _on_resume_button_pressed():

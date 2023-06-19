@@ -3,7 +3,6 @@ signal hit
 signal exit
 @export var speed = 400
 
-
 func _ready():
 	pass
 

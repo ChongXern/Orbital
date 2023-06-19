@@ -1,8 +1,9 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 @export var speed = 400
 var screen_size
 var current_dir = "none"
+signal killed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -49,9 +50,11 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play()
 	# else:
 		# $AnimatedSprite2D.stop()
-	position += velocity * delta
-	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
+	#position += velocity * delta
+	#position.x = clamp(position.x, 0, screen_size.x)
+	#position.y = clamp(position.y, 0, screen_size.y)
 	handleInput()
 	move_and_slide()
-	
+
+func die():
+	killed.emit()

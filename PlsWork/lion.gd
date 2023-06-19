@@ -22,3 +22,4 @@ func _on_detection_area_body_exited(body):
 func _on_detection_area_body_entered(body):
 	player_body = body
 	player_chase = true
+
