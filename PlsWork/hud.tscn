@@ -59,7 +59,7 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0.976471, 0.847059, 0.286275, 1)
 theme_override_fonts/font = ExtResource("3_3c3vy")
 theme_override_font_sizes/font_size = 350
-text = "100"
+text = "60"
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
