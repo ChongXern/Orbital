@@ -12,7 +12,7 @@ func _ready():
 	$hud/PauseMenu.hide()
 	$hud/ScoreTimer.start()
 	score = 100
-	#player.killed.connect(_on_player_killed)
+	player.killed.connect(_on_player_killed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
