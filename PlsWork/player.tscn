@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cfqusdtmjtapf"]
+[gd_scene load_steps=46 format=3 uid="uid://cfqusdtmjtapf"]
 
 [ext_resource type="Texture2D" uid="uid://dahlo6j5la5ye" path="res://sprite animations/main player/main_player_1.png" id="1_2my5a"]
 [ext_resource type="Script" path="res://player.gd" id="1_o1uar"]
@@ -39,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://b3koh11epc108" path="res://sprite animations/weapons/pepper spray 2/pepper_spray_3.png" id="25_2bgjo"]
 [ext_resource type="Texture2D" uid="uid://ys6s54g8ogvg" path="res://sprite animations/weapons/pepper spray 2/pepper_spray_2.png" id="26_stu27"]
 [ext_resource type="Texture2D" uid="uid://dtmrgd13n2xvd" path="res://sprite animations/weapons/pepper spray 2/pepper_spray_1.png" id="27_3nqnm"]
+[ext_resource type="Texture2D" uid="uid://d2rw7qhs4eer1" path="res://sprite animations/weapons/pepper spray/spray powder.png" id="40_h06kh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vcdb4"]
 animations = [{
@@ -252,8 +253,26 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jleid"]
-radius = 67.0
+radius = 52.0
 height = 146.0
+
+[sub_resource type="Gradient" id="Gradient_eklpl"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lcxsc"]
+gradient = SubResource("Gradient_eklpl")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1jifa"]
+particle_flag_disable_z = true
+direction = Vector3(-1, 2.08165e-12, 2.08165e-12)
+spread = 22.5
+gravity = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+initial_velocity_min = 250.0
+initial_velocity_max = 250.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.5
+color_ramp = SubResource("GradientTexture1D_lcxsc")
 
 [node name="player" type="CharacterBody2D"]
 z_index = 1
@@ -267,9 +286,7 @@ y_sort_enabled = true
 position = Vector2(39, 61)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_vcdb4")
-animation = &"running"
-frame = 1
-frame_progress = 0.698477
+animation = &"pepper spray idle"
 offset = Vector2(2.08165e-12, -40)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -288,3 +305,9 @@ limit_smoothed = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-134, -23)
+amount = 45
+process_material = SubResource("ParticleProcessMaterial_1jifa")
+texture = ExtResource("40_h06kh")

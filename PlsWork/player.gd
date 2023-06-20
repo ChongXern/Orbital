@@ -4,6 +4,9 @@ class_name Player extends CharacterBody2D
 # var screen_size
 var current_dir = "none"
 signal killed
+var isSpray = false
+var isTorch = false
+var isHorn = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
