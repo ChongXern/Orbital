@@ -1,7 +1,6 @@
 extends Node2D
 var score
 var player = null
-var player_animation = player/AnimatedSprite2D
 
 @onready var hud = $hud
 @onready var game_over = $game_over
@@ -12,7 +11,7 @@ func _ready():
 	$hud/Cross.hide()
 	$hud/PauseMenu.hide()
 	$hud/ScoreTimer.start()
-	$player/GPUParticles2D.hide()
+	$player/AnimatedSprite2D/GPUParticles2D.hide()
 	$hud/torchButton.disabled = true
 	$hud/sprayButton.disabled = true
 	$hud/hornButton.disabled = true
@@ -52,14 +51,21 @@ func _on_player_killed():
 func _on_pick_up_torch_picked_up():
 	#item disappears and collision is disabled
 	get_node("weapons to pick up/pick up torch").visible = false
-	get_node("weapons to pick up/pick up spray/CollisionShape2D").disabled = true
+	get_node("weapons to pick up/pick up torch/CollisionShape2D").disabled = true
 	#make weapons buttons appear
 	$hud/torchButton.disabled = false
 	$hud/torchButton.visible = true
 
 
 func _on_torch_button_pressed():
-	pass # Replace with function body.
+	print_debug("button pressed torch")
+	$player/AnimatedSprite2D.flip_h = true
+	$player/AnimatedSprite2D.play("fire_torch")
+	var lion_pos = $lion.position
+	$lion/AnimatedSprite2D.flip_h = true
+	for i in range(10):
+		lion_pos.x -= i
+	$lion/AnimatedSprite2D.play("lion running")
 
 
 func _on_spray_button_pressed():

@@ -47,16 +47,3 @@ func _on_exit_button_pressed():
 func _on_pause_button_pressed():
 	get_tree().paused = true
 	PauseMenu.visible = true
-
-
-func _on_torch_button_pressed():
-	get_tree()
-	pass # Replace with function body.
-
-
-func _on_spray_button_pressed():
-	pass # Replace with function body.
-
-
-func _on_horn_button_pressed():
-	pass # Replace with function body.
