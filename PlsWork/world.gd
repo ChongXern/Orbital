@@ -46,6 +46,9 @@ func _on_player_killed():
 	await get_tree().create_timer(1.5).timeout
 	game_over.visible = true
 	
+var first_weapon
+var second_weapon
+var third_weapon
 
 #torch is picked up
 func _on_pick_up_torch_picked_up():
@@ -57,6 +60,12 @@ func _on_pick_up_torch_picked_up():
 	$hud/torchButton.visible = true
 
 
+func _on_pick_up_spray_picked_up():
+	get_node("weapons to pick up/pick up spray").visible = false
+	get_node("weapons to pick up/pick up spray/CollisionShape2D").disabled = true
+	$hud/sprayButton.disabled = false
+	$hud/sprayButton.visible = true
+	
 func _on_torch_button_pressed():
 	print_debug("button pressed torch")
 	$player/AnimatedSprite2D.flip_h = true
@@ -74,3 +83,4 @@ func _on_spray_button_pressed():
 
 func _on_horn_button_pressed():
 	pass # Replace with function body.
+
