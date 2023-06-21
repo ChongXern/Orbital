@@ -8,7 +8,6 @@ var score = 100
 func _ready():
 	pass
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_pressed("ui_cancel"):
@@ -34,8 +33,6 @@ func _on_score_timer_timeout():
 
 func update_score(score):
 	$Score.text = str(score)
-
-
 
 func _on_resume_button_pressed():
 	PauseMenu.visible = false

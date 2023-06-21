@@ -1,10 +1,13 @@
-[gd_scene load_steps=105 format=3 uid="uid://bxmaqyaucubwb"]
+[gd_scene load_steps=108 format=3 uid="uid://bxmaqyaucubwb"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_218ld"]
 [ext_resource type="PackedScene" uid="uid://cfqusdtmjtapf" path="res://player.tscn" id="1_vur2i"]
 [ext_resource type="PackedScene" uid="uid://dd8qgse56k3ty" path="res://lion.tscn" id="3_8py68"]
+[ext_resource type="Texture2D" uid="uid://ciu5a0x45bvct" path="res://sprite animations/weapons/pick up weapons/UI fire torch.png" id="3_hngl6"]
+[ext_resource type="Texture2D" uid="uid://bewi6ij427til" path="res://sprite animations/weapons/pick up weapons/UI air horn.png" id="4_0v71l"]
 [ext_resource type="Texture2D" uid="uid://eyivoexcbl3m" path="res://clb assets resized/red couch 1 right.png" id="4_2mm06"]
 [ext_resource type="Texture2D" uid="uid://xk6f1wudmpsp" path="res://clb assets resized/ground floor tile 2.png" id="4_a141y"]
+[ext_resource type="Texture2D" uid="uid://cjgjxelh3nrvn" path="res://sprite animations/weapons/pick up weapons/UI pepper spray.png" id="5_f54k3"]
 [ext_resource type="Texture2D" uid="uid://d1epu4id16fkq" path="res://clb assets resized/pillar.png" id="5_tci0y"]
 [ext_resource type="Texture2D" uid="uid://bjjghwearqswv" path="res://clb assets resized/red couch 2 left.png" id="5_ytot2"]
 [ext_resource type="Texture2D" uid="uid://cn10s88vtacaa" path="res://clb assets resized/red couch 2 right.png" id="6_uw1a8"]
@@ -2578,6 +2581,29 @@ offset_right = 3863.0
 offset_bottom = 1752.0
 grow_horizontal = 1
 
+[node name="weapon buttons" type="Node2D" parent="."]
+position = Vector2(7028, 2754)
+
+[node name="torch" type="Button" parent="weapon buttons"]
+offset_left = -37.0
+offset_top = -75.0
+offset_right = 271.0
+offset_bottom = 309.0
+icon = ExtResource("3_hngl6")
+flat = true
+
+[node name="horn" type="Button" parent="weapon buttons"]
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("4_0v71l")
+flat = true
+
+[node name="spray" type="Button" parent="weapon buttons"]
+offset_right = 238.0
+offset_bottom = 291.0
+icon = ExtResource("5_f54k3")
+flat = true
+
 [node name="player" parent="." instance=ExtResource("1_vur2i")]
 position = Vector2(11718, 1700)
 
@@ -2585,6 +2611,7 @@ position = Vector2(11718, 1700)
 position = Vector2(13898, 1732)
 
 [node name="TileMap new" type="TileMap" parent="."]
+visible = false
 y_sort_enabled = true
 position = Vector2(9, 0)
 tile_set = SubResource("TileSet_qjq0v")
@@ -2690,15 +2717,15 @@ scale = Vector2(1, 1.83333)
 metadata/_edit_vertical_guides_ = [25957.0]
 metadata/_edit_horizontal_guides_ = [3107.0]
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="weapons to pick up" type="Node2D" parent="."]
 
-[node name="pick up torch" parent="Node2D" instance=ExtResource("53_bs6x8")]
+[node name="pick up torch" parent="weapons to pick up" instance=ExtResource("53_bs6x8")]
 position = Vector2(6850, 2040)
 
-[node name="pick up horn" parent="Node2D" instance=ExtResource("54_f8mav")]
+[node name="pick up horn" parent="weapons to pick up" instance=ExtResource("54_f8mav")]
 position = Vector2(16050, 2040)
 
-[node name="pick up spray" parent="Node2D" instance=ExtResource("55_txtmg")]
+[node name="pick up spray" parent="weapons to pick up" instance=ExtResource("55_txtmg")]
 position = Vector2(9707, 1734)
 
 [connection signal="exit" from="npcPaths/Path2D2/PathFollow2D/npc2" to="." method="_on_ally_exit"]
