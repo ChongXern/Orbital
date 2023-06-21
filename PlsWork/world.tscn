@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=3 uid="uid://bxmaqyaucubwb"]
+[gd_scene load_steps=105 format=3 uid="uid://bxmaqyaucubwb"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_218ld"]
 [ext_resource type="PackedScene" uid="uid://cfqusdtmjtapf" path="res://player.tscn" id="1_vur2i"]
@@ -52,6 +52,9 @@
 [ext_resource type="Texture2D" uid="uid://empbkk8qcfmy" path="res://clb assets resized/grey couch left.png" id="42_qpoil"]
 [ext_resource type="Texture2D" uid="uid://fvt1w1e02ktp" path="res://clb assets resized/grey couch right.png" id="43_g8knw"]
 [ext_resource type="PackedScene" uid="uid://bscyew2uxbqpl" path="res://game_over.tscn" id="45_hb08m"]
+[ext_resource type="PackedScene" uid="uid://b380d4ekl817o" path="res://pick up weapons/pick_up_torch.tscn" id="53_bs6x8"]
+[ext_resource type="PackedScene" uid="uid://btvwtfaobokv8" path="res://pick up weapons/pick_up_horn.tscn" id="54_f8mav"]
+[ext_resource type="PackedScene" uid="uid://b5uxnlk8yl467" path="res://pick up weapons/pick_up_spray.tscn" id="55_txtmg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r0hfa"]
 texture = ExtResource("26_05p5k")
@@ -2686,6 +2689,17 @@ scale = Vector2(1, 1.83333)
 [node name="hud" parent="." instance=ExtResource("27_5kq3n")]
 metadata/_edit_vertical_guides_ = [25957.0]
 metadata/_edit_horizontal_guides_ = [3107.0]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="pick up torch" parent="Node2D" instance=ExtResource("53_bs6x8")]
+position = Vector2(6850, 2040)
+
+[node name="pick up horn" parent="Node2D" instance=ExtResource("54_f8mav")]
+position = Vector2(16050, 2040)
+
+[node name="pick up spray" parent="Node2D" instance=ExtResource("55_txtmg")]
+position = Vector2(9707, 1734)
 
 [connection signal="exit" from="npcPaths/Path2D2/PathFollow2D/npc2" to="." method="_on_ally_exit"]
 [connection signal="hit" from="npcPaths/Path2D2/PathFollow2D/npc2" to="." method="_on_ally_hit"]

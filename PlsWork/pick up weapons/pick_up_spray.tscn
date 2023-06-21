@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5uxnlk8yl467"]
+
+[ext_resource type="Texture2D" uid="uid://c6133174v4ra8" path="res://sprite animations/weapons/pick up weapons/pepper spray weapon.png" id="1_0wlc8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hxlak"]
+size = Vector2(80, 80)
+
+[node name="pick up spray" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0wlc8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hxlak")
