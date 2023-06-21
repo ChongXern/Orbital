@@ -49,8 +49,8 @@
 [ext_resource type="Texture2D" uid="uid://p3706lbgdhr4" path="res://clb assets resized/mini couch 2.png" id="38_loasp"]
 [ext_resource type="Texture2D" uid="uid://bhyyacc4pb66o" path="res://clb assets resized/table 2 right.png" id="39_x54gi"]
 [ext_resource type="Texture2D" uid="uid://ccyx2c6tcwduc" path="res://clb assets resized/chair back.png" id="40_3oaqq"]
-[ext_resource type="Texture2D" uid="uid://empbkk8qcfmy" path="res://clb assets resized/grey couch left.png" id="42_qpoil"]
-[ext_resource type="Texture2D" uid="uid://fvt1w1e02ktp" path="res://clb assets resized/grey couch right.png" id="43_g8knw"]
+[ext_resource type="Texture2D" path="res://clb assets resized/grey couch left.png" id="42_qpoil"]
+[ext_resource type="Texture2D" path="res://clb assets resized/grey couch right.png" id="43_g8knw"]
 [ext_resource type="PackedScene" uid="uid://bscyew2uxbqpl" path="res://game_over.tscn" id="45_hb08m"]
 [ext_resource type="Texture2D" uid="uid://ciu5a0x45bvct" path="res://sprite animations/weapons/pick up weapons/UI fire torch.png" id="53_6bxcx"]
 [ext_resource type="PackedScene" uid="uid://b380d4ekl817o" path="res://pick up weapons/pick_up_torch.tscn" id="53_bs6x8"]
@@ -2567,8 +2567,6 @@ point_count = 5
 [node name="world branch_4" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_218ld")
-metadata/_edit_vertical_guides_ = [5130.0, 7690.0, 10237.0, 12801.0, 15362.0, 6329.0, 8883.0, 26009.0]
-metadata/_edit_horizontal_guides_ = [3118.0, 2240.0, 1599.0]
 
 [node name="game_over" parent="." instance=ExtResource("45_hb08m")]
 anchors_preset = 9
@@ -2713,7 +2711,7 @@ offset_bottom = 8.0
 position = Vector2(6850, 2040)
 
 [node name="pick up spray" parent="weapons to pick up" instance=ExtResource("55_txtmg")]
-position = Vector2(9707, 1734)
+position = Vector2(9730, 1721)
 
 [node name="pick up horn" parent="weapons to pick up" instance=ExtResource("54_f8mav")]
 position = Vector2(16050, 2040)
