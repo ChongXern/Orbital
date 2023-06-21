@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://btvwtfaobokv8"]
+
+[ext_resource type="Script" path="res://pick up weapons/pick_up_horn.gd" id="1_csij2"]
+[ext_resource type="Texture2D" uid="uid://blbyvplax0auj" path="res://sprite animations/weapons/pick up weapons/air horn weapon.png" id="1_vkgxe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghfx2"]
+size = Vector2(80, 80)
+
+[node name="pick up horn" type="Area2D"]
+script = ExtResource("1_csij2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vkgxe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ghfx2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

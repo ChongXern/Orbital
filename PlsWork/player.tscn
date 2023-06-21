@@ -60,7 +60,7 @@ animations = [{
 "texture": ExtResource("6_i05v8")
 }],
 "loop": true,
-"name": &"air horn down",
+"name": &"air_horn_down",
 "speed": 15.0
 }, {
 "frames": [{
@@ -80,7 +80,7 @@ animations = [{
 "texture": ExtResource("2_4r2qs")
 }],
 "loop": true,
-"name": &"air horn idle",
+"name": &"air_horn_idle",
 "speed": 15.0
 }, {
 "frames": [{
@@ -100,7 +100,7 @@ animations = [{
 "texture": ExtResource("2_4r2qs")
 }],
 "loop": true,
-"name": &"air horn up",
+"name": &"air_horn_up",
 "speed": 15.0
 }, {
 "frames": [{
@@ -156,7 +156,7 @@ animations = [{
 "texture": ExtResource("23_vithk")
 }],
 "loop": true,
-"name": &"fire torch",
+"name": &"fire_torch",
 "speed": 15.0
 }, {
 "frames": [{
@@ -173,7 +173,7 @@ animations = [{
 "texture": ExtResource("27_3nqnm")
 }],
 "loop": true,
-"name": &"pepper spray down",
+"name": &"pepper_spray_down",
 "speed": 15.0
 }, {
 "frames": [{
@@ -190,7 +190,7 @@ animations = [{
 "texture": ExtResource("24_06bju")
 }],
 "loop": true,
-"name": &"pepper spray idle",
+"name": &"pepper_spray_idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -207,7 +207,7 @@ animations = [{
 "texture": ExtResource("24_06bju")
 }],
 "loop": true,
-"name": &"pepper spray up",
+"name": &"pepper_spray_up",
 "speed": 5.0
 }, {
 "frames": [{
@@ -252,10 +252,6 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jleid"]
-radius = 52.0
-height = 146.0
-
 [sub_resource type="Gradient" id="Gradient_eklpl"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
@@ -274,6 +270,10 @@ orbit_velocity_max = 0.0
 scale_min = 0.5
 color_ramp = SubResource("GradientTexture1D_lcxsc")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jleid"]
+radius = 52.0
+height = 146.0
+
 [node name="player" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
@@ -286,8 +286,15 @@ y_sort_enabled = true
 position = Vector2(39, 61)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_vcdb4")
-animation = &"pepper spray idle"
+animation = &"fire_torch"
 offset = Vector2(2.08165e-12, -40)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="AnimatedSprite2D"]
+position = Vector2(-865, -420)
+scale = Vector2(5, 5)
+amount = 45
+process_material = SubResource("ParticleProcessMaterial_1jifa")
+texture = ExtResource("40_h06kh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
@@ -305,9 +312,3 @@ limit_smoothed = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(-134, -23)
-amount = 45
-process_material = SubResource("ParticleProcessMaterial_1jifa")
-texture = ExtResource("40_h06kh")
