@@ -1,6 +1,5 @@
-extends Area2D
- 
-signal picked_up
+extends Node2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,6 +11,5 @@ func _process(delta):
 	pass
 
 
-func _on_body_entered(body):
-	print_debug("torch picked up")
-	picked_up.emit()
+func _on_torch_pressed():
+	pass # Replace with function body.

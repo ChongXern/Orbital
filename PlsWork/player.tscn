@@ -60,7 +60,7 @@ animations = [{
 "texture": ExtResource("6_i05v8")
 }],
 "loop": true,
-"name": &"air horn down",
+"name": &"air_horn_down",
 "speed": 15.0
 }, {
 "frames": [{
@@ -80,7 +80,7 @@ animations = [{
 "texture": ExtResource("2_4r2qs")
 }],
 "loop": true,
-"name": &"air horn idle",
+"name": &"air_horn_idle",
 "speed": 15.0
 }, {
 "frames": [{
@@ -100,7 +100,7 @@ animations = [{
 "texture": ExtResource("2_4r2qs")
 }],
 "loop": true,
-"name": &"air horn up",
+"name": &"air_horn_up",
 "speed": 15.0
 }, {
 "frames": [{
@@ -156,7 +156,7 @@ animations = [{
 "texture": ExtResource("23_vithk")
 }],
 "loop": true,
-"name": &"fire torch",
+"name": &"fire_torch",
 "speed": 15.0
 }, {
 "frames": [{
@@ -173,7 +173,7 @@ animations = [{
 "texture": ExtResource("27_3nqnm")
 }],
 "loop": true,
-"name": &"pepper spray down",
+"name": &"pepper_spray_down",
 "speed": 15.0
 }, {
 "frames": [{
@@ -190,7 +190,7 @@ animations = [{
 "texture": ExtResource("24_06bju")
 }],
 "loop": true,
-"name": &"pepper spray idle",
+"name": &"pepper_spray_idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -207,7 +207,7 @@ animations = [{
 "texture": ExtResource("24_06bju")
 }],
 "loop": true,
-"name": &"pepper spray up",
+"name": &"pepper_spray_up",
 "speed": 5.0
 }, {
 "frames": [{
@@ -286,7 +286,7 @@ y_sort_enabled = true
 position = Vector2(39, 61)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_vcdb4")
-animation = &"pepper spray idle"
+animation = &"pepper_spray_idle"
 offset = Vector2(2.08165e-12, -40)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

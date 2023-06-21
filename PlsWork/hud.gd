@@ -2,6 +2,7 @@ extends CanvasLayer
 signal pressed_tag
 signal message_disappear
 @onready var PauseMenu = $PauseMenu
+#@onready var player_animation = get_parent().get_node("player")
 var score = 100
 
 # Called when the node enters the scene tree for the first time.
@@ -10,6 +11,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#print_debug("node: ", get_parent().get_node("/root/Global").get_path())
 	if Input.is_action_pressed("ui_cancel"):
 		PauseMenu.visible = true
 		get_tree().paused = true
@@ -45,3 +47,16 @@ func _on_exit_button_pressed():
 func _on_pause_button_pressed():
 	get_tree().paused = true
 	PauseMenu.visible = true
+
+
+func _on_torch_button_pressed():
+	get_tree()
+	pass # Replace with function body.
+
+
+func _on_spray_button_pressed():
+	pass # Replace with function body.
+
+
+func _on_horn_button_pressed():
+	pass # Replace with function body.
