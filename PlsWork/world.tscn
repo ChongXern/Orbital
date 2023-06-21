@@ -2560,7 +2560,7 @@ _data = {
 }
 point_count = 5
 
-[node name="world" type="Node2D"]
+[node name="world branch_4" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_218ld")
 metadata/_edit_vertical_guides_ = [5130.0, 7690.0, 10237.0, 12801.0, 15362.0, 6329.0, 8883.0, 26009.0]
