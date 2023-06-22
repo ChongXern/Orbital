@@ -2,12 +2,14 @@ extends CanvasLayer
 signal pressed_tag
 signal message_disappear
 @onready var PauseMenu = $PauseMenu
+
 #@onready var player_animation = get_parent().get_node("player")
 var score = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -15,12 +17,15 @@ func _process(delta):
 	if Input.is_action_pressed("ui_cancel"):
 		PauseMenu.visible = true
 		get_tree().paused = true
- 
+
 func _on_tag_button_pressed():
 	$MessageTimer.start()
 	if Global.check == true:
+		$AnimationPlayer.play('dissolve')
+		print_debug("Global check true")
 		$Tick.show()
 		$ScoreTimer.stop()
+		get_tree().paused = true
 	else:
 		$Cross.show()
 

@@ -47,9 +47,9 @@ func _on_player_killed():
 	await get_tree().create_timer(1.5).timeout
 	game_over.visible = true
 	
-var first_weapon
-var second_weapon
-var third_weapon
+var first_weapon = "none"
+var second_weapon = "none"
+var third_weapon = "none"
 
 #torch is picked up
 func _on_pick_up_torch_picked_up():
@@ -59,6 +59,13 @@ func _on_pick_up_torch_picked_up():
 	#make weapons buttons appear
 	$hud/torchButton.disabled = false
 	$hud/torchButton.visible = true
+	#set as which weapon
+	if first_weapon == "none":
+		first_weapon = "torch"
+	elif second_weapon == "none":
+		second_weapon = "torch"
+	else:
+		third_weapon = "torch"
 
 
 func _on_pick_up_spray_picked_up():
@@ -79,6 +86,7 @@ func _on_torch_button_pressed():
 
 
 func _on_spray_button_pressed():
+	
 	pass # Replace with function body.
 
 

@@ -2973,15 +2973,18 @@ offset_bottom = 1752.0
 grow_horizontal = 1
 
 [node name="player" parent="." instance=ExtResource("1_vur2i")]
+visible = false
 position = Vector2(25312, 1596)
 
 [node name="AnimatedSprite2D" parent="player" index="0"]
 position = Vector2(37, 61)
 
 [node name="lion" parent="." instance=ExtResource("3_8py68")]
-position = Vector2(26537, 1559)
+visible = false
+position = Vector2(27863, 1576)
 
 [node name="TileMap new" type="TileMap" parent="."]
+visible = false
 y_sort_enabled = true
 position = Vector2(9, 0)
 tile_set = SubResource("TileSet_qjq0v")

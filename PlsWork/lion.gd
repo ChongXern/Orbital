@@ -18,7 +18,6 @@ func _on_detection_area_body_exited(body):
 	player_body = null
 	player_chase = false
 
-
 func _on_detection_area_body_entered(body):
 	player_body = body
 	player_chase = true
