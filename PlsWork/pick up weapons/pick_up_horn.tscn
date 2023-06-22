@@ -3,16 +3,18 @@
 [ext_resource type="Script" path="res://pick up weapons/pick_up_horn.gd" id="1_csij2"]
 [ext_resource type="Texture2D" uid="uid://blbyvplax0auj" path="res://sprite animations/weapons/pick up weapons/air horn weapon.png" id="1_vkgxe"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghfx2"]
-size = Vector2(80, 80)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41rtk"]
+size = Vector2(80, 78)
 
 [node name="pick up horn" type="Area2D"]
 script = ExtResource("1_csij2")
+metadata/_edit_horizontal_guides_ = [-40.0, 40.0]
+metadata/_edit_vertical_guides_ = [-40.0, 40.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_vkgxe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_ghfx2")
+shape = SubResource("RectangleShape2D_41rtk")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

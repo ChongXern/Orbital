@@ -45,6 +45,7 @@ func handleInput():
 		moveDirection.x += 1
 	velocity = moveDirection.normalized() * speed
 
+
 func _physics_process(delta):
 	handleInput()
 	var velocity = Vector2.ZERO

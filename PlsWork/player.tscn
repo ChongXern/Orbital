@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cfqusdtmjtapf"]
+[gd_scene load_steps=49 format=3 uid="uid://cfqusdtmjtapf"]
 
 [ext_resource type="Texture2D" uid="uid://dahlo6j5la5ye" path="res://sprite animations/main player/main_player_1.png" id="1_2my5a"]
 [ext_resource type="Script" path="res://player.gd" id="1_o1uar"]
@@ -36,7 +36,10 @@
 [ext_resource type="Texture2D" uid="uid://dh8eeimfi454c" path="res://sprite animations/weapons/fire torch/torch_16.png" id="22_bceud"]
 [ext_resource type="Texture2D" uid="uid://bi33o2arkt0ws" path="res://sprite animations/weapons/fire torch/torch_17.png" id="23_vithk"]
 [ext_resource type="Texture2D" uid="uid://ku0fe7r4s8p" path="res://sprite animations/weapons/pepper spray 2/pepper_spray_4.png" id="24_06bju"]
+[ext_resource type="Texture2D" uid="uid://sgn0an0mruhs" path="res://sprite animations/main player/idle animation/idle_player_1.png" id="24_qspgu"]
 [ext_resource type="Texture2D" uid="uid://b3koh11epc108" path="res://sprite animations/weapons/pepper spray 2/pepper_spray_3.png" id="25_2bgjo"]
+[ext_resource type="Texture2D" uid="uid://mpuj85eroaxg" path="res://sprite animations/main player/idle animation/idle_player_2.png" id="25_wr2he"]
+[ext_resource type="Texture2D" uid="uid://dk3j4x3ca7tqx" path="res://sprite animations/main player/idle animation/idle_player_3.png" id="26_5wvwe"]
 [ext_resource type="Texture2D" uid="uid://ys6s54g8ogvg" path="res://sprite animations/weapons/pepper spray 2/pepper_spray_2.png" id="26_stu27"]
 [ext_resource type="Texture2D" uid="uid://dtmrgd13n2xvd" path="res://sprite animations/weapons/pepper spray 2/pepper_spray_1.png" id="27_3nqnm"]
 [ext_resource type="Texture2D" uid="uid://d2rw7qhs4eer1" path="res://sprite animations/weapons/pepper spray/spray powder.png" id="40_h06kh"]
@@ -158,6 +161,20 @@ animations = [{
 "loop": true,
 "name": &"fire_torch",
 "speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_qspgu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_wr2he")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_5wvwe")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -286,7 +303,8 @@ y_sort_enabled = true
 position = Vector2(39, 61)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_vcdb4")
-animation = &"fire_torch"
+animation = &"idle"
+frame_progress = 0.735291
 offset = Vector2(2.08165e-12, -40)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="AnimatedSprite2D"]

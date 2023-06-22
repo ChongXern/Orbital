@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://bxmaqyaucubwb"]
+[gd_scene load_steps=110 format=3 uid="uid://bxmaqyaucubwb"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_218ld"]
 [ext_resource type="PackedScene" uid="uid://cfqusdtmjtapf" path="res://player.tscn" id="1_vur2i"]
@@ -58,6 +58,7 @@
 [ext_resource type="PackedScene" uid="uid://btvwtfaobokv8" path="res://pick up weapons/pick_up_horn.tscn" id="54_f8mav"]
 [ext_resource type="Texture2D" uid="uid://cjgjxelh3nrvn" path="res://sprite animations/weapons/pick up weapons/UI pepper spray.png" id="55_mt0h4"]
 [ext_resource type="PackedScene" uid="uid://b5uxnlk8yl467" path="res://pick up weapons/pick_up_spray.tscn" id="55_txtmg"]
+[ext_resource type="Texture2D" uid="uid://bewi6ij427til" path="res://sprite animations/weapons/pick up weapons/UI air horn.png" id="56_r1rf6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r0hfa"]
 texture = ExtResource("26_05p5k")
@@ -3088,35 +3089,39 @@ metadata/_edit_vertical_guides_ = [25957.0]
 metadata/_edit_horizontal_guides_ = [3107.0]
 
 [node name="torchButton" type="Button" parent="hud"]
-offset_left = 6862.0
-offset_top = 2546.0
-offset_right = 7170.0
-offset_bottom = 2930.0
+offset_left = 6863.0
+offset_top = 2547.0
+offset_right = 7171.0
+offset_bottom = 2931.0
 icon = ExtResource("53_6bxcx")
 flat = true
 
 [node name="sprayButton" type="Button" parent="hud"]
-offset_left = 6900.0
-offset_top = 2653.0
-offset_right = 7138.0
-offset_bottom = 2944.0
+offset_left = 6901.0
+offset_top = 2654.0
+offset_right = 7139.0
+offset_bottom = 2945.0
 icon = ExtResource("55_mt0h4")
 flat = true
 
 [node name="hornButton" type="Button" parent="hud"]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 6901.0
+offset_top = 2620.0
+offset_right = 7139.0
+offset_bottom = 2940.0
+icon = ExtResource("56_r1rf6")
+flat = true
 
 [node name="weapons to pick up" type="Node2D" parent="."]
 
 [node name="pick up torch" parent="weapons to pick up" instance=ExtResource("53_bs6x8")]
-position = Vector2(6850, 2040)
+position = Vector2(15809, 1960)
 
 [node name="pick up spray" parent="weapons to pick up" instance=ExtResource("55_txtmg")]
-position = Vector2(9730, 1721)
+position = Vector2(16209, 1959)
 
 [node name="pick up horn" parent="weapons to pick up" instance=ExtResource("54_f8mav")]
-position = Vector2(16050, 2040)
+position = Vector2(16690, 1962)
 
 [connection signal="exit" from="npcPaths/Path2D2/PathFollow2D/npc2" to="." method="_on_ally_exit"]
 [connection signal="hit" from="npcPaths/Path2D2/PathFollow2D/npc2" to="." method="_on_ally_hit"]

@@ -3,17 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://c6133174v4ra8" path="res://sprite animations/weapons/pick up weapons/pepper spray weapon.png" id="1_0wlc8"]
 [ext_resource type="Script" path="res://pick up weapons/pick_up_spray.gd" id="1_05xnv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hxlak"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrt6u"]
 size = Vector2(80, 80)
 
 [node name="pick up spray" type="Area2D"]
 collision_layer = 512
 script = ExtResource("1_05xnv")
+metadata/_edit_horizontal_guides_ = [-40.0, 40.0]
+metadata/_edit_vertical_guides_ = [-40.0, 40.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_0wlc8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_hxlak")
+shape = SubResource("RectangleShape2D_jrt6u")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

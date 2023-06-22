@@ -56,56 +56,66 @@ func index_weapons(weapon: String):
 		first_weapon = weapon
 	elif second_weapon == "none":
 		second_weapon = weapon
-	else:
+	elif third_weapon == "none":
 		third_weapon = weapon
+
+func organise_individual_weapon(index: int, weapon: String):
+	var buttonPos = Vector2(6901, 2620)
+	if (index == 2):
+		buttonPos.x = 6573
+	elif (index == 3):
+		buttonPos.x = 6245
+	var _button
+	if (weapon == "torch"):
+		_button = $hud/torchButton
+	elif (weapon == "spray"):
+		_button = $hud/sprayButton
+	else:
+		_button = $hud/hornButton
+	_button.position = buttonPos
+	_button.disabled = false
+	_button.visible = true
+
+func organise_weapons():
+	if (first_weapon != "none"):
+		organise_individual_weapon(1, first_weapon)
+	if (second_weapon != "none"):
+		organise_individual_weapon(2, second_weapon)
+	if (third_weapon != "none"):
+		organise_individual_weapon(3, third_weapon)
+
+func print_weapons():
+	print_debug("1st weapon: ", first_weapon)
+	print_debug(" 2nd weapon: ", second_weapon)
+	print_debug(" 3rd weapon: ", third_weapon)
 
 #torch is picked up
 func _on_pick_up_torch_picked_up():
 	#item disappears and collision is disabled
 	get_node("weapons to pick up/pick up torch").visible = false
 	get_node("weapons to pick up/pick up torch/CollisionShape2D").disabled = true
-	#make weapons buttons appear
-	$hud/torchButton.disabled = false
-	$hud/torchButton.visible = true
 	#set as which weapon
 	index_weapons("torch")
+	#make weapons buttons appear
+	organise_weapons()
+
+	print_weapons()
 
 func _on_pick_up_spray_picked_up():
 	get_node("weapons to pick up/pick up spray").visible = false
 	get_node("weapons to pick up/pick up spray/CollisionShape2D").disabled = true
-	$hud/sprayButton.disabled = false
-	$hud/sprayButton.visible = true
 	index_weapons("spray")
+	organise_weapons()
+
+	print_weapons()
 	
 func _on_pick_up_horn_picked_up():
 	get_node("weapons to pick up/pick up horn").visible = false
 	get_node("weapons to pick up/pick up horn/CollisionShape2D").disabled = true
-	$hud/hornButton.disabled = false
-	$hud/hornButton.visible = true
 	index_weapons("horn")
+	organise_weapons()
 
-func organise_weapons():
-	if (first_weapon != "none"):
-		if (first_weapon == "torch"):
-			$hud/torchButton.disabled = false
-			$hud/torchButton.visible = true
-		elif (first_weapon == "spray"):
-			$hud/sprayButton.disabled = false
-			$hud/sprayButton.visible = true
-		else:
-			$hud/hornButton.disabled = false
-			$hud/hornButton.visible = true
-	if (second_weapon != "none"):
-		if (first_weapon == "torch"):
-			$hud/torchButton.position()
-			$hud/torchButton.disabled = false
-			$hud/torchButton.visible = true
-		elif (first_weapon == "spray"):
-			$hud/sprayButton.disabled = false
-			$hud/sprayButton.visible = true
-		else:
-			$hud/hornButton.disabled = false
-			$hud/hornButton.visible = true
+	print_weapons()
 
 func _on_torch_button_pressed():
 	print_debug("button pressed torch")
@@ -116,8 +126,6 @@ func _on_torch_button_pressed():
 	for i in range(10):
 		lion_pos.x -= i
 	$lion/AnimatedSprite2D.play("lion running")
-
-
 
 func _on_spray_button_pressed():
 	
