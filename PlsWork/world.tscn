@@ -2973,18 +2973,15 @@ offset_bottom = 1752.0
 grow_horizontal = 1
 
 [node name="player" parent="." instance=ExtResource("1_vur2i")]
-visible = false
 position = Vector2(25312, 1596)
 
 [node name="AnimatedSprite2D" parent="player" index="0"]
 position = Vector2(37, 61)
 
 [node name="lion" parent="." instance=ExtResource("3_8py68")]
-visible = false
 position = Vector2(27863, 1576)
 
 [node name="TileMap new" type="TileMap" parent="."]
-visible = false
 y_sort_enabled = true
 position = Vector2(9, 0)
 tile_set = SubResource("TileSet_qjq0v")
@@ -3134,6 +3131,7 @@ position = Vector2(16050, 2040)
 [connection signal="pressed" from="hud/hornButton" to="." method="_on_horn_button_pressed"]
 [connection signal="picked_up" from="weapons to pick up/pick up torch" to="." method="_on_pick_up_torch_picked_up"]
 [connection signal="picked_up" from="weapons to pick up/pick up spray" to="." method="_on_pick_up_spray_picked_up"]
+[connection signal="picked_up" from="weapons to pick up/pick up horn" to="." method="_on_pick_up_horn_picked_up"]
 
 [editable path="player"]
 [editable path="lion"]

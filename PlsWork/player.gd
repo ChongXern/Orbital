@@ -12,6 +12,10 @@ var isHorn = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite2D.play("running")
+	var moveDirection = Vector2.ZERO
+	moveDirection.x -= 1
+	velocity = moveDirection.normalized() * speed
+	move_and_slide()
 
 func compute_animation(current_dir):
 	var anim = $AnimatedSprite2D
@@ -46,7 +50,7 @@ func _physics_process(delta):
 	var velocity = Vector2.ZERO
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.play()
+		#$AnimatedSprite2D.play()
 	compute_animation(current_dir)
 	move_and_slide()
 

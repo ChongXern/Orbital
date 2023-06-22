@@ -51,6 +51,14 @@ var first_weapon = "none"
 var second_weapon = "none"
 var third_weapon = "none"
 
+func index_weapons(weapon: String):
+	if first_weapon == "none":
+		first_weapon = weapon
+	elif second_weapon == "none":
+		second_weapon = weapon
+	else:
+		third_weapon = weapon
+
 #torch is picked up
 func _on_pick_up_torch_picked_up():
 	#item disappears and collision is disabled
@@ -60,20 +68,45 @@ func _on_pick_up_torch_picked_up():
 	$hud/torchButton.disabled = false
 	$hud/torchButton.visible = true
 	#set as which weapon
-	if first_weapon == "none":
-		first_weapon = "torch"
-	elif second_weapon == "none":
-		second_weapon = "torch"
-	else:
-		third_weapon = "torch"
-
+	index_weapons("torch")
 
 func _on_pick_up_spray_picked_up():
 	get_node("weapons to pick up/pick up spray").visible = false
 	get_node("weapons to pick up/pick up spray/CollisionShape2D").disabled = true
 	$hud/sprayButton.disabled = false
 	$hud/sprayButton.visible = true
+	index_weapons("spray")
 	
+func _on_pick_up_horn_picked_up():
+	get_node("weapons to pick up/pick up horn").visible = false
+	get_node("weapons to pick up/pick up horn/CollisionShape2D").disabled = true
+	$hud/hornButton.disabled = false
+	$hud/hornButton.visible = true
+	index_weapons("horn")
+
+func organise_weapons():
+	if (first_weapon != "none"):
+		if (first_weapon == "torch"):
+			$hud/torchButton.disabled = false
+			$hud/torchButton.visible = true
+		elif (first_weapon == "spray"):
+			$hud/sprayButton.disabled = false
+			$hud/sprayButton.visible = true
+		else:
+			$hud/hornButton.disabled = false
+			$hud/hornButton.visible = true
+	if (second_weapon != "none"):
+		if (first_weapon == "torch"):
+			$hud/torchButton.position()
+			$hud/torchButton.disabled = false
+			$hud/torchButton.visible = true
+		elif (first_weapon == "spray"):
+			$hud/sprayButton.disabled = false
+			$hud/sprayButton.visible = true
+		else:
+			$hud/hornButton.disabled = false
+			$hud/hornButton.visible = true
+
 func _on_torch_button_pressed():
 	print_debug("button pressed torch")
 	$player/AnimatedSprite2D.flip_h = true
@@ -85,6 +118,7 @@ func _on_torch_button_pressed():
 	$lion/AnimatedSprite2D.play("lion running")
 
 
+
 func _on_spray_button_pressed():
 	
 	pass # Replace with function body.
@@ -92,4 +126,3 @@ func _on_spray_button_pressed():
 
 func _on_horn_button_pressed():
 	pass # Replace with function body.
-

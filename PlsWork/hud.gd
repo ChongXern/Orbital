@@ -8,8 +8,7 @@ var score = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-	
+	$blackRect.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -21,8 +20,7 @@ func _process(delta):
 func _on_tag_button_pressed():
 	$MessageTimer.start()
 	if Global.check == true:
-		$AnimationPlayer.play('dissolve')
-		print_debug("Global check true")
+		$blackRect.show()
 		$Tick.show()
 		$ScoreTimer.stop()
 		get_tree().paused = true
