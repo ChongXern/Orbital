@@ -5,6 +5,7 @@ class_name Player extends CharacterBody2D
 var current_dir = "none"
 signal killed
 var currentWeapon = "none"
+var started_game = false
 var stopped = false
 var isSpray = false
 var isTorch = false
@@ -28,36 +29,41 @@ func compute_animation(current_dir):
 			elif current_dir == "left":
 				anim.flip_h = false
 			anim.play("idle")
-		else:
+		elif started_game:
 			anim.play("running")
 			if current_dir == "right":
 				anim.flip_h = true
 			else:
 				anim.flip_h = false
+		else:
+			anim.play("idle")
 	
+func move_body(current_dir):
+	var moveDirection = Vector2.ZERO
+	if Input.is_action_pressed("up"):
+		moveDirection.y -= 1
+	elif Input.is_action_pressed("down"):
+		moveDirection.y += 1
+	if current_dir == "left":
+		moveDirection.x -= 1
+	elif current_dir == "right":
+		moveDirection.x += 1
+	velocity = moveDirection.normalized() * speed
+	#move_and_slide()
 
 func handleInput():
 	if Input.is_action_just_pressed("left"):
 		stopped = false
+		started_game = true
 		current_dir = "left"
 	elif Input.is_action_just_pressed("right"):
 		stopped = false
+		started_game = true
 		current_dir = "right"
 	elif Input.is_action_just_pressed("stop"):
 		stopped = true
 	var moveDirection = Vector2.ZERO
-	if current_dir == "left":
-		if Input.is_action_pressed("up"):
-			moveDirection.y -= 1
-		elif Input.is_action_pressed("down"):
-			moveDirection.y += 1
-		moveDirection.x -= 1
-	elif current_dir == "right":
-		if Input.is_action_pressed("up"):
-			moveDirection.y -= 1
-		elif Input.is_action_pressed("down"):
-			moveDirection.y += 1
-		moveDirection.x += 1
+	move_body(current_dir)
 	if stopped:
 		moveDirection.x = 0
 		moveDirection.y = 0
@@ -67,7 +73,7 @@ func handleInput():
 		elif Input.is_action_pressed("down"):
 			stopped = false
 			moveDirection.y += 1
-	velocity = moveDirection.normalized() * speed
+		velocity = moveDirection.normalized() * speed
 
 
 func _physics_process(delta):
@@ -86,13 +92,8 @@ func _on_torch_button_pressed():
 	$AnimatedSprite2D.play("fire_torch")
 	await get_tree().create_timer(3).timeout
 	$AnimatedSprite2D.play("running")
-	var moveDirection = Vector2.ZERO
-	if current_dir == "left":
-		moveDirection.x -= 1
-	elif current_dir == "right":
-		moveDirection.x += 1
-	velocity = moveDirection.normalized() * speed
-	move_and_slide()
+	move_body(current_dir)
+	#move_and_slide()
 
 func _on_spray_button_pressed():
 	isSpray = true
@@ -105,6 +106,9 @@ func _on_spray_button_pressed():
 	await get_tree().create_timer(3).timeout
 	$AnimatedSprite2D.play("pepper_spray_down")
 	await get_tree().create_timer(0.267).timeout
+	$AnimatedSprite2D.play("running")
+	$AnimatedSprite2D/GPUParticles2D.hide()
+	
 
 #old code
 '''class_name Player extends CharacterBody2D

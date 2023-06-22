@@ -303,8 +303,8 @@ y_sort_enabled = true
 position = Vector2(39, 61)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_vcdb4")
-animation = &"pepper_spray_down"
-frame_progress = 0.379466
+animation = &"idle"
+frame_progress = 0.569319
 offset = Vector2(2.08165e-12, -40)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="AnimatedSprite2D"]
