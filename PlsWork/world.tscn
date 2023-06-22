@@ -2982,8 +2982,6 @@ position = Vector2(37, 61)
 
 [node name="lion" parent="." instance=ExtResource("3_8py68")]
 position = Vector2(26043, 1679)
-collision_layer = 8
-collision_mask = 2
 
 [node name="TileMap new" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -3143,6 +3141,7 @@ collision_mask = 2
 [connection signal="pressed" from="hud/torchButton" to="." method="_on_torch_button_pressed"]
 [connection signal="pressed" from="hud/torchButton" to="player" method="_on_torch_button_pressed"]
 [connection signal="pressed" from="hud/sprayButton" to="." method="_on_spray_button_pressed"]
+[connection signal="pressed" from="hud/sprayButton" to="player" method="_on_spray_button_pressed"]
 [connection signal="pressed" from="hud/hornButton" to="." method="_on_horn_button_pressed"]
 [connection signal="picked_up" from="weapons to pick up/pick up torch" to="." method="_on_pick_up_torch_picked_up"]
 [connection signal="picked_up" from="weapons to pick up/pick up spray" to="." method="_on_pick_up_spray_picked_up"]
