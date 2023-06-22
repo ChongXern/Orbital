@@ -304,7 +304,7 @@ position = Vector2(39, 61)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_vcdb4")
 animation = &"idle"
-frame_progress = 0.735291
+frame_progress = 0.895432
 offset = Vector2(2.08165e-12, -40)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="AnimatedSprite2D"]

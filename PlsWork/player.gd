@@ -24,6 +24,7 @@ func compute_animation(current_dir):
 		anim.flip_h = true
 	else:
 		anim.flip_h = false
+	
 
 func handleInput():
 	if Input.is_action_just_pressed("left"):
@@ -57,6 +58,13 @@ func _physics_process(delta):
 
 func die():
 	killed.emit()
+
+func _on_torch_button_pressed():
+	isTorch = true
+	velocity = Vector2.ZERO
+	$AnimatedSprite2D.flip_h = true
+	$AnimatedSprite2D.play("fire_torch")
+	
 
 #old code
 '''class_name Player extends CharacterBody2D
@@ -112,3 +120,4 @@ func _physics_process(delta):
 
 func die():
 	killed.emit()'''
+

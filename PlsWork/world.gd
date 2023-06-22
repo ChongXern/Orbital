@@ -85,14 +85,14 @@ func organise_weapons():
 		organise_individual_weapon(3, third_weapon)
 
 func print_weapons():
-	print_debug("1st weapon: ", first_weapon)
+	print_debug(" 1st weapon: ", first_weapon)
 	print_debug(" 2nd weapon: ", second_weapon)
 	print_debug(" 3rd weapon: ", third_weapon)
 
 #torch is picked up
 func _on_pick_up_torch_picked_up():
 	#item disappears and collision is disabled
-	get_node("weapons to pick up/pick up torch").visible = false
+	#get_node("weapons to pick up/pick up torch").visible = false
 	get_node("weapons to pick up/pick up torch/CollisionShape2D").disabled = true
 	#set as which weapon
 	index_weapons("torch")
@@ -102,7 +102,7 @@ func _on_pick_up_torch_picked_up():
 	print_weapons()
 
 func _on_pick_up_spray_picked_up():
-	get_node("weapons to pick up/pick up spray").visible = false
+	#get_node("weapons to pick up/pick up spray").visible = false
 	get_node("weapons to pick up/pick up spray/CollisionShape2D").disabled = true
 	index_weapons("spray")
 	organise_weapons()
@@ -110,7 +110,7 @@ func _on_pick_up_spray_picked_up():
 	print_weapons()
 	
 func _on_pick_up_horn_picked_up():
-	get_node("weapons to pick up/pick up horn").visible = false
+	#get_node("weapons to pick up/pick up horn").visible = false
 	get_node("weapons to pick up/pick up horn/CollisionShape2D").disabled = true
 	index_weapons("horn")
 	organise_weapons()

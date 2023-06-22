@@ -61,4 +61,5 @@ right={
 
 2d_physics/layer_1="world"
 2d_physics/layer_2="player"
+2d_physics/layer_4="lion"
 2d_physics/layer_10="weapons"

@@ -13,6 +13,7 @@ func _physics_process(delta):
 		else:
 			$AnimatedSprite2D.flip_h = false
 		$AnimatedSprite2D.play("lion running")
+	print_debug(position)
 
 func _on_detection_area_body_exited(body):
 	player_body = null
