@@ -3,6 +3,7 @@ var score
 var player = null
 
 @onready var hud = $hud
+@onready var start = false
 @onready var game_over = $game_over
 # Called when the node enters the scene tree for the first time.
 func _ready():
