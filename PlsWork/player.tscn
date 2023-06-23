@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://cfqusdtmjtapf"]
+[gd_scene load_steps=54 format=3 uid="uid://cfqusdtmjtapf"]
 
 [ext_resource type="Texture2D" uid="uid://dahlo6j5la5ye" path="res://sprite animations/main player/main_player_1.png" id="1_2my5a"]
 [ext_resource type="Script" path="res://player.gd" id="1_o1uar"]
@@ -43,6 +43,8 @@
 [ext_resource type="Texture2D" uid="uid://ys6s54g8ogvg" path="res://sprite animations/weapons/pepper spray 2/pepper_spray_2.png" id="26_stu27"]
 [ext_resource type="Texture2D" uid="uid://dtmrgd13n2xvd" path="res://sprite animations/weapons/pepper spray 2/pepper_spray_1.png" id="27_3nqnm"]
 [ext_resource type="Texture2D" uid="uid://d2rw7qhs4eer1" path="res://sprite animations/weapons/pepper spray/spray powder.png" id="40_h06kh"]
+[ext_resource type="AudioStream" uid="uid://rlecwqnjsllk" path="res://audio/air horn sound effect.mp3" id="44_q4xxa"]
+[ext_resource type="AudioStream" uid="uid://bhapb6014s4n5" path="res://audio/pepper spray sound effect.mp3" id="45_g200a"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vcdb4"]
 animations = [{
@@ -321,7 +323,7 @@ y_sort_enabled = true
 position = Vector2(39, 61)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_vcdb4")
-animation = &"pepper_spray_idle"
+animation = &"idle"
 offset = Vector2(2.08165e-12, -40)
 
 [node name="particles_right" type="GPUParticles2D" parent="AnimatedSprite2D"]
@@ -336,6 +338,12 @@ position = Vector2(-830, -415)
 amount = 45
 process_material = SubResource("ParticleProcessMaterial_2lb43")
 texture = ExtResource("40_h06kh")
+
+[node name="hornAudio" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
+stream = ExtResource("44_q4xxa")
+
+[node name="sprayAudio" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
+stream = ExtResource("45_g200a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1

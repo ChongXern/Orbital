@@ -87,7 +87,6 @@ func die():
 func _on_torch_button_pressed():
 	isTorch = true
 	stopped = true
-	print_debug("torch picked")
 	$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
 	$AnimatedSprite2D.play("fire_torch")
 	await get_tree().create_timer(3).timeout
@@ -109,11 +108,31 @@ func _on_spray_button_pressed():
 		spray_particle = $AnimatedSprite2D/particles_left
 	spray_particle.emitting = true
 	$AnimatedSprite2D.play("pepper_spray_idle")
+	$AnimatedSprite2D/sprayAudio.play()
 	await get_tree().create_timer(2.466).timeout
 	$AnimatedSprite2D.play("pepper_spray_down")
-	await get_tree().create_timer(0.267).timeout
+	$AnimatedSprite2D/sprayAudio.stop()
 	spray_particle.emitting = false
+	await get_tree().create_timer(0.267).timeout
 	$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
 	$AnimatedSprite2D.play("running")
-	isTorch = false
+	isSpray = false
+	stopped = false
+
+
+func _on_horn_button_pressed():
+	isHorn = true
+	stopped = true
+	$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
+	$AnimatedSprite2D.play("air_horn_up")
+	await get_tree().create_timer(0.267).timeout
+	$AnimatedSprite2D.play("air_horn_idle")
+	$AnimatedSprite2D/hornAudio.play()
+	await get_tree().create_timer(2.466).timeout
+	$AnimatedSprite2D.play("air_horn_down")
+	$AnimatedSprite2D/hornAudio.stop()
+	await get_tree().create_timer(0.267).timeout
+	$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
+	$AnimatedSprite2D.play("running")
+	isHorn = false
 	stopped = false
