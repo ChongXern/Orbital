@@ -1,10 +1,27 @@
 extends Node2D
 var score
 var player = null
-
+var isLionRunningAway = false
 
 @onready var hud = $hud
 @onready var start = false
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _physics_process(delta):
+	# temporarily used for lion.gd since nodes don't work there for some reason
+	$lion/AnimatedSprite2D.play("lion running")
+	var targetPos
+	if isLionRunningAway:
+		$lion/AnimatedSprite2D.flip_h = true
+		targetPos = ($lion.position - $player.position).normalized()
+		$lion.velocity = targetPos * 600
+	else:
+		$lion/AnimatedSprite2D.flip_h = false
+		targetPos = ($lion.position - $player.position).normalized()
+		if $lion.position.distance_to($player.position) > 3:
+			$lion.velocity = -targetPos * 600
+	$lion.move_and_slide()
+	#print_debug($lion.position.distance_to($player.position))
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,7 +30,6 @@ func _ready():
 	$hud/Cross.hide()
 	$hud/PauseMenu.hide()
 	$hud/ScoreTimer.start()
-	$player/AnimatedSprite2D/GPUParticles2D.hide()
 	$hud/torchButton.disabled = true
 	$hud/sprayButton.disabled = true
 	$hud/hornButton.disabled = true
@@ -23,16 +39,6 @@ func _ready():
 	$game_over.hide()
 	score = 60
 	#player.killed.connect(_on_player_killed)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
-	# temporarily used for lion.gd since nodes don't work there for some reason
-	$lion/AnimatedSprite2D.play("lion running")
-	var targetPos = ($player.position - $lion.position).normalized()
-	if $lion.position.distance_to($player.position) > 3:
-		$lion.velocity = targetPos * 600
-		$lion.move_and_slide()
-	#print_debug($lion.position.distance_to($player.position))
 
 #shows tag button on collition with any npc/ally
 func _on_ally_hit():
@@ -59,7 +65,7 @@ var first_weapon = "none"
 var second_weapon = "none"
 var third_weapon = "none"
 
-func reorganise_weapon(weapon: String):
+func reorganise_weapons(weapon: String):
 	if (first_weapon == weapon):
 		first_weapon = second_weapon
 		second_weapon = third_weapon
@@ -100,6 +106,7 @@ func organise_weapons():
 		organise_individual_weapon(2, second_weapon)
 	if (third_weapon != "none"):
 		organise_individual_weapon(3, third_weapon)
+	print_weapons()
 
 func print_weapons():
 	print_debug(" 1st weapon: ", first_weapon)
@@ -129,18 +136,20 @@ func _on_pick_up_horn_picked_up():
 	organise_weapons()
 
 func _on_torch_button_pressed():
-	print_debug("button pressed torch")
-	$lion/AnimatedSprite2D.flip_h = true
-	$lion/AnimatedSprite2D.play("lion running")
-	$lion.position.x += 1
-	var targetPos = ($player.position - $lion.position).normalized()
-	$lion.velocity = -targetPos * 600
-	$lion.move_and_slide()
+	isLionRunningAway = true
+	await get_tree().create_timer(3).timeout
+	isLionRunningAway = false
+	reorganise_weapons("torch")
 
 func _on_spray_button_pressed():
-	
-	pass # Replace with function body.
+	isLionRunningAway = true
+	await get_tree().create_timer(3).timeout
+	isLionRunningAway = false
+	reorganise_weapons("spray")
 
 
 func _on_horn_button_pressed():
-	pass # Replace with function body.
+	isLionRunningAway = true
+	await get_tree().create_timer(3).timeout
+	isLionRunningAway = false
+	reorganise_weapons("horn")

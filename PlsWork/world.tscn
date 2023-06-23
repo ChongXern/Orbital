@@ -1916,7 +1916,7 @@ texture_region_size = Vector2i(80, 80)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2nofk"]
 texture = ExtResource("39_xn2g3")
-texture_region_size = Vector2i(80, 80)
+texture_region_size = Vector2i(80, 400)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1929,54 +1929,6 @@ texture_region_size = Vector2i(80, 80)
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
-0:2/0 = 0
-0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:2/0/physics_layer_0/angular_velocity = 0.0
-1:2/0 = 0
-1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:2/0/physics_layer_0/angular_velocity = 0.0
-0:3/0 = 0
-0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:3/0/physics_layer_0/angular_velocity = 0.0
-1:3/0 = 0
-1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:3/0/physics_layer_0/angular_velocity = 0.0
-0:4/0 = 0
-0:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:4/0/physics_layer_0/angular_velocity = 0.0
-1:4/0 = 0
-1:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:4/0/physics_layer_0/angular_velocity = 0.0
-0:5/0 = 0
-0:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:5/0/physics_layer_0/angular_velocity = 0.0
-1:5/0 = 0
-1:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:5/0/physics_layer_0/angular_velocity = 0.0
-0:6/0 = 0
-0:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:6/0/physics_layer_0/angular_velocity = 0.0
-1:6/0 = 0
-1:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:6/0/physics_layer_0/angular_velocity = 0.0
-0:7/0 = 0
-0:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:7/0/physics_layer_0/angular_velocity = 0.0
-1:7/0 = 0
-1:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:7/0/physics_layer_0/angular_velocity = 0.0
-0:8/0 = 0
-0:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:8/0/physics_layer_0/angular_velocity = 0.0
-1:8/0 = 0
-1:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:8/0/physics_layer_0/angular_velocity = 0.0
-0:9/0 = 0
-0:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:9/0/physics_layer_0/angular_velocity = 0.0
-1:9/0 = 0
-1:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:9/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_elicl"]
 texture = ExtResource("37_2oal4")
@@ -3032,7 +2984,7 @@ metadata/_edit_vertical_guides_ = [12970.0, 15529.0, 17929.0, 4983.0, 9.0]
 
 [node name="player" parent="." instance=ExtResource("1_vur2i")]
 z_index = 3
-position = Vector2(25200, 988)
+position = Vector2(21994, 1612)
 collision_layer = 2
 
 [node name="AnimatedSprite2D" parent="player" index="0"]
@@ -3040,8 +2992,7 @@ position = Vector2(37, 61)
 
 [node name="lion" parent="." instance=ExtResource("3_8py68")]
 z_index = 4
-y_sort_enabled = true
-position = Vector2(25871, 1054)
+position = Vector2(22738, 1625)
 
 [node name="TileMap new" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -3076,8 +3027,8 @@ layer_4/enabled = true
 layer_4/modulate = Color(1, 1, 1, 1)
 layer_4/y_sort_enabled = false
 layer_4/y_sort_origin = 0
-layer_4/z_index = 4
-layer_4/tile_data = PackedInt32Array()
+layer_4/z_index = 5
+layer_4/tile_data = PackedInt32Array(852192, 38, 1, 852193, 65574, 1, 852245, 38, 1, 852246, 65574, 1, 524565, 38, 0, 524566, 65574, 0, 131349, 38, 0, 131350, 65574, 0, 196885, 38, 0, 196886, 65574, 0, 524512, 38, 0, 524513, 65574, 0, 131296, 38, 0, 131297, 65574, 0, 196832, 38, 0, 196833, 65574, 0, 131264, 38, 0, 131265, 65574, 0, 196800, 38, 0, 196801, 65574, 0, 524480, 38, 0, 524481, 65574, 0, 852160, 38, 1, 852161, 65574, 1, 852128, 38, 1, 852129, 65574, 1, 524448, 38, 0, 524449, 65574, 0, 196768, 38, 0, 196769, 65574, 0, 131232, 38, 0, 131233, 65574, 0, 524416, 38, 0, 524417, 65574, 0, 131200, 38, 0, 131201, 65574, 0, 262272, 38, 0, 262273, 65574, 0, 852096, 38, 1, 852097, 65574, 1, 852064, 38, 1, 852065, 65574, 1, 524384, 38, 0, 524385, 65574, 0, 131168, 38, 0, 131169, 65574, 0, 196704, 38, 0, 196705, 65574, 0, 131136, 38, 0, 131137, 65574, 0, 196672, 38, 0, 196673, 65574, 0, 524352, 38, 0, 524353, 65574, 0, 852032, 38, 1, 852033, 65574, 1)
 
 [node name="game_over" parent="." instance=ExtResource("45_hb08m")]
 anchors_preset = 9
@@ -3193,12 +3144,12 @@ flat = true
 [node name="weapons to pick up" type="Node2D" parent="."]
 
 [node name="pick up torch" parent="weapons to pick up" instance=ExtResource("53_bs6x8")]
-position = Vector2(22131, 1721)
+position = Vector2(20214, 1724)
 collision_layer = 512
 collision_mask = 2
 
 [node name="pick up spray" parent="weapons to pick up" instance=ExtResource("55_txtmg")]
-position = Vector2(22930, 1719)
+position = Vector2(21894, 1730)
 collision_mask = 2
 
 [node name="pick up horn" parent="weapons to pick up" instance=ExtResource("54_f8mav")]

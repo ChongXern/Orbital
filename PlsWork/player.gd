@@ -13,7 +13,8 @@ var isHorn = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AnimatedSprite2D/GPUParticles2D.hide()
+	$AnimatedSprite2D/particles_left.emitting = false
+	$AnimatedSprite2D/particles_right.emitting = false
 	var moveDirection = Vector2.ZERO
 	moveDirection.x -= 1
 	velocity = moveDirection.normalized() * speed
@@ -90,7 +91,10 @@ func _on_torch_button_pressed():
 	$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
 	$AnimatedSprite2D.play("fire_torch")
 	await get_tree().create_timer(3).timeout
-	$AnimatedSprite2D.play("idle")
+	$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
+	$AnimatedSprite2D.play("running")
+	isTorch = false
+	stopped = false
 
 func _on_spray_button_pressed():
 	isSpray = true
@@ -98,10 +102,18 @@ func _on_spray_button_pressed():
 	$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
 	$AnimatedSprite2D.play("pepper_spray_up")
 	await get_tree().create_timer(0.267).timeout
+	var spray_particle
+	if ($AnimatedSprite2D.flip_h):
+		spray_particle = $AnimatedSprite2D/particles_right
+	else:
+		spray_particle = $AnimatedSprite2D/particles_left
+	spray_particle.emitting = true
 	$AnimatedSprite2D.play("pepper_spray_idle")
-	$AnimatedSprite2D/GPUParticles2D.show()
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(2.466).timeout
 	$AnimatedSprite2D.play("pepper_spray_down")
 	await get_tree().create_timer(0.267).timeout
+	spray_particle.emitting = false
+	$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
 	$AnimatedSprite2D.play("running")
-	$AnimatedSprite2D/GPUParticles2D.hide()
+	isTorch = false
+	stopped = false
