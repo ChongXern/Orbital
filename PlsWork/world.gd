@@ -6,6 +6,7 @@ var isLionRunningAway = false
 @onready var hud = $hud
 @onready var start = false
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	# temporarily used for lion.gd since nodes don't work there for some reason
@@ -139,12 +140,17 @@ func _on_torch_button_pressed():
 	isLionRunningAway = true
 	await get_tree().create_timer(3).timeout
 	isLionRunningAway = false
+	$hud/torchButton.disabled = true
+	$hud/torchButton.hide()
 	reorganise_weapons("torch")
 
 func _on_spray_button_pressed():
+	await get_tree().create_timer(0.267).timeout
 	isLionRunningAway = true
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(2.733).timeout
 	isLionRunningAway = false
+	$hud/sprayButton.disabled = true
+	$hud/sprayButton.hide()
 	reorganise_weapons("spray")
 
 
@@ -152,4 +158,6 @@ func _on_horn_button_pressed():
 	isLionRunningAway = true
 	await get_tree().create_timer(3).timeout
 	isLionRunningAway = false
+	$hud/hornButton.disabled = true
+	$hud/hornButton.hide()
 	reorganise_weapons("horn")

@@ -1,7 +1,6 @@
 class_name Player extends CharacterBody2D
 
 @export var speed = 600
-# var screen_size
 var current_dir = "left"
 signal killed
 var currentWeapon = "none"
@@ -89,8 +88,12 @@ func _on_torch_button_pressed():
 	stopped = true
 	$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
 	$AnimatedSprite2D.play("fire_torch")
+	$AnimatedSprite2D/torchAudio.play()
+	$AnimatedSprite2D/torchAudio.play()
+	$AnimatedSprite2D/torchAudio.play()
 	await get_tree().create_timer(3).timeout
 	$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
+	$AnimatedSprite2D/torchAudio.stop()
 	$AnimatedSprite2D.play("running")
 	isTorch = false
 	stopped = false

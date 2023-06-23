@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://cfqusdtmjtapf"]
+[gd_scene load_steps=55 format=3 uid="uid://cfqusdtmjtapf"]
 
 [ext_resource type="Texture2D" uid="uid://dahlo6j5la5ye" path="res://sprite animations/main player/main_player_1.png" id="1_2my5a"]
 [ext_resource type="Script" path="res://player.gd" id="1_o1uar"]
@@ -45,6 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://d2rw7qhs4eer1" path="res://sprite animations/weapons/pepper spray/spray powder.png" id="40_h06kh"]
 [ext_resource type="AudioStream" uid="uid://rlecwqnjsllk" path="res://audio/air horn sound effect.mp3" id="44_q4xxa"]
 [ext_resource type="AudioStream" uid="uid://bhapb6014s4n5" path="res://audio/pepper spray sound effect.mp3" id="45_g200a"]
+[ext_resource type="AudioStream" uid="uid://jsuowk4xnmug" path="res://audio/fire torch sound effect.mp3" id="46_0k3o0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vcdb4"]
 animations = [{
@@ -344,6 +345,10 @@ stream = ExtResource("44_q4xxa")
 
 [node name="sprayAudio" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
 stream = ExtResource("45_g200a")
+
+[node name="torchAudio" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
+stream = ExtResource("46_0k3o0")
+volume_db = 2.24
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
