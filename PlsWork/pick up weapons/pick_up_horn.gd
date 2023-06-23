@@ -1,6 +1,10 @@
 extends Area2D
 signal picked_up
+var weaponUsed = false
 
 func _on_body_entered(body):
-	print_debug("horn picked up")
-	picked_up.emit()
+	if not weaponUsed:
+		print_debug("horn picked up")
+		$CollisionShape2D.set_disabled(false)
+		picked_up.emit()
+		weaponUsed = true

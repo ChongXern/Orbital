@@ -2,27 +2,41 @@ extends Node2D
 var score
 var player = null
 var isLionRunningAway = false
+var lionDir = "none"
+
 
 @onready var hud = $hud
 @onready var start = false
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	if distance_to_lion() >= 0:
+		lionDir == "left"
+	else:
+		lionDir == "right"
 	# temporarily used for lion.gd since nodes don't work there for some reason
 	$lion/AnimatedSprite2D.play("lion running")
 	var targetPos
 	if isLionRunningAway:
-		$lion/AnimatedSprite2D.flip_h = true
+		if lionDir == "left":
+			$lion/AnimatedSprite2D.flip_h =  true
+		elif lionDir == "right":
+			$lion/AnimatedSprite2D.flip_h = false
 		targetPos = ($lion.position - $player.position).normalized()
-		$lion.velocity = targetPos * 600
+		$lion.velocity = targetPos * 450
 	else:
-		$lion/AnimatedSprite2D.flip_h = false
+		if lionDir == "left":
+			$lion/AnimatedSprite2D.flip_h = false
+		elif lionDir == "right":
+			$lion/AnimatedSprite2D.flip_h = true
 		targetPos = ($lion.position - $player.position).normalized()
 		if $lion.position.distance_to($player.position) > 3:
 			$lion.velocity = -targetPos * 600
 	$lion.move_and_slide()
-	#print_debug($lion.position.distance_to($player.position))
+	print(distance_to_lion())
+	
+func distance_to_lion() -> float:
+	return $lion.position.x - $player.position.x
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -137,27 +151,33 @@ func _on_pick_up_horn_picked_up():
 	organise_weapons()
 
 func _on_torch_button_pressed():
+	print_debug("torch used")
 	isLionRunningAway = true
 	await get_tree().create_timer(3).timeout
 	isLionRunningAway = false
 	$hud/torchButton.disabled = true
+	#$"weapons to pick up/pick up torch/CollisionShape2D".disabled = true
 	$hud/torchButton.hide()
 	reorganise_weapons("torch")
 
 func _on_spray_button_pressed():
+	print_debug("spray used")
 	await get_tree().create_timer(0.267).timeout
 	isLionRunningAway = true
 	await get_tree().create_timer(2.733).timeout
 	isLionRunningAway = false
 	$hud/sprayButton.disabled = true
+	#$"weapons to pick up/pick up spray/CollisionShape2D".disabled = true
 	$hud/sprayButton.hide()
 	reorganise_weapons("spray")
 
 
 func _on_horn_button_pressed():
+	print_debug("horn used")
 	isLionRunningAway = true
 	await get_tree().create_timer(3).timeout
 	isLionRunningAway = false
 	$hud/hornButton.disabled = true
+	#$"weapons to pick up/pick up horn/CollisionShape2D".disabled = true
 	$hud/hornButton.hide()
 	reorganise_weapons("horn")
