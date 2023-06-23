@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjgjxelh3nrvn"
-path="res://.godot/imported/UI pepper spray.png-305d75f6c6fafd8a003655aa9d226c1e.ctex"
+uid="uid://dirbgg2f56xs"
+path="res://.godot/imported/picked up torch.png-b2270738c2f7f3a06003ba28f52846fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite animations/weapons/pick up weapons/UI pepper spray.png"
-dest_files=["res://.godot/imported/UI pepper spray.png-305d75f6c6fafd8a003655aa9d226c1e.ctex"]
+source_file="res://sprite animations/weapons/pick up weapons/picked up torch.png"
+dest_files=["res://.godot/imported/picked up torch.png-b2270738c2f7f3a06003ba28f52846fc.ctex"]
 
 [params]
 

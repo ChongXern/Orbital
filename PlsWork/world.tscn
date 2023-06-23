@@ -53,12 +53,12 @@
 [ext_resource type="Texture2D" uid="uid://empbkk8qcfmy" path="res://clb assets resized/grey couch left.png" id="42_qpoil"]
 [ext_resource type="Texture2D" uid="uid://fvt1w1e02ktp" path="res://clb assets resized/grey couch right.png" id="43_g8knw"]
 [ext_resource type="PackedScene" uid="uid://bscyew2uxbqpl" path="res://game_over.tscn" id="45_hb08m"]
-[ext_resource type="Texture2D" uid="uid://ciu5a0x45bvct" path="res://sprite animations/weapons/pick up weapons/UI fire torch.png" id="53_6bxcx"]
+[ext_resource type="Texture2D" path="res://sprite animations/weapons/pick up weapons/UI fire torch.png" id="53_6bxcx"]
 [ext_resource type="PackedScene" uid="uid://b380d4ekl817o" path="res://pick up weapons/pick_up_torch.tscn" id="53_bs6x8"]
 [ext_resource type="PackedScene" uid="uid://btvwtfaobokv8" path="res://pick up weapons/pick_up_horn.tscn" id="54_f8mav"]
-[ext_resource type="Texture2D" uid="uid://cjgjxelh3nrvn" path="res://sprite animations/weapons/pick up weapons/UI pepper spray.png" id="55_mt0h4"]
+[ext_resource type="Texture2D" path="res://sprite animations/weapons/pick up weapons/UI pepper spray.png" id="55_mt0h4"]
 [ext_resource type="PackedScene" uid="uid://b5uxnlk8yl467" path="res://pick up weapons/pick_up_spray.tscn" id="55_txtmg"]
-[ext_resource type="Texture2D" uid="uid://bewi6ij427til" path="res://sprite animations/weapons/pick up weapons/UI air horn.png" id="56_r1rf6"]
+[ext_resource type="Texture2D" path="res://sprite animations/weapons/pick up weapons/UI air horn.png" id="56_r1rf6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r0hfa"]
 texture = ExtResource("26_05p5k")

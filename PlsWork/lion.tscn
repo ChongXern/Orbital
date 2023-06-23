@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dd8qgse56k3ty"]
+[gd_scene load_steps=16 format=3 uid="uid://dd8qgse56k3ty"]
 
 [ext_resource type="Script" path="res://lion.gd" id="1_nee8n"]
 [ext_resource type="Texture2D" uid="uid://c6oy7pxfu3vfg" path="res://sprite animations/lion/lion_1.png" id="2_cot6f"]
@@ -61,9 +61,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ivhkd"]
 size = Vector2(617.5, 227)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vcw00"]
-radius = 1941.01
-
 [node name="lion" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 2
@@ -80,11 +77,3 @@ animation = &"lion running"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-112.25, -20.5)
 shape = SubResource("RectangleShape2D_ivhkd")
-
-[node name="detectionArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea"]
-shape = SubResource("CircleShape2D_vcw00")
-
-[connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]
-[connection signal="body_exited" from="detectionArea" to="." method="_on_detection_area_body_exited"]

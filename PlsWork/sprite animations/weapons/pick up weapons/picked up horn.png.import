@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciu5a0x45bvct"
-path="res://.godot/imported/UI fire torch.png-4c07e9aa2dcf9402eabe0197050dae11.ctex"
+uid="uid://b78ji528w7po6"
+path="res://.godot/imported/picked up horn.png-dc0ccbf06bca4539b9b27b38674d0845.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite animations/weapons/pick up weapons/UI fire torch.png"
-dest_files=["res://.godot/imported/UI fire torch.png-4c07e9aa2dcf9402eabe0197050dae11.ctex"]
+source_file="res://sprite animations/weapons/pick up weapons/picked up horn.png"
+dest_files=["res://.godot/imported/picked up horn.png-dc0ccbf06bca4539b9b27b38674d0845.ctex"]
 
 [params]
 

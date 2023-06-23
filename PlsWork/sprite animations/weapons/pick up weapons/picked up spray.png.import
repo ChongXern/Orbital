@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bewi6ij427til"
-path="res://.godot/imported/UI air horn.png-430b6896edf7f94811f0f9b62bcf1508.ctex"
+uid="uid://bbkq2lcjiq54"
+path="res://.godot/imported/picked up spray.png-b9d93ce289472e5f21382620aef3cb09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite animations/weapons/pick up weapons/UI air horn.png"
-dest_files=["res://.godot/imported/UI air horn.png-430b6896edf7f94811f0f9b62bcf1508.ctex"]
+source_file="res://sprite animations/weapons/pick up weapons/picked up spray.png"
+dest_files=["res://.godot/imported/picked up spray.png-b9d93ce289472e5f21382620aef3cb09.ctex"]
 
 [params]
 

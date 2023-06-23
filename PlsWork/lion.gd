@@ -1,15 +1,18 @@
+# temporarily useless
 extends CharacterBody2D
 @export var speed = 600;
 #var player_chase = false
 #var player_body = null
 
-var playerPos 
-var targetPos
-#@onready var player = get_parent().get_node("player")
 
-func _physics_process(delta):
-	pass
-	'''
+var playerPos
+var targetPos
+#@onready var controlSample = get_node("../player")
+
+
+#func _physics_process(delta):
+#	print_debug(player.position)
+'''
 	#position += speed
 	$AnimatedSprite2D.play("lion running")
 	playerPos = player.position
@@ -17,8 +20,8 @@ func _physics_process(delta):
 	if position.distance_to(playerPos) > 3:
 		velocity = targetPos * speed
 		move_and_slide()
-	'''
-	'''
+'''
+'''
 	if player_chase:
 		position += (player_body.position - position) / speed
 		if position < player_body.position:

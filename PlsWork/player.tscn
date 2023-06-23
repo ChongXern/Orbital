@@ -291,7 +291,7 @@ color_ramp = SubResource("GradientTexture1D_lcxsc")
 radius = 52.0
 height = 146.0
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["players"]]
 z_index = 1
 y_sort_enabled = true
 collision_mask = 5

@@ -26,12 +26,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	# temporarily used for lion.gd since nodes don't work there for some reason
 	$lion/AnimatedSprite2D.play("lion running")
 	var targetPos = ($player.position - $lion.position).normalized()
 	if $lion.position.distance_to($player.position) > 3:
 		$lion.velocity = targetPos * 600
 		$lion.move_and_slide()
-	
+	print_debug($lion.position.distance_to($player.position))
 
 #shows tag button on collition with any npc/ally
 func _on_ally_hit():
@@ -106,15 +107,11 @@ func _on_pick_up_torch_picked_up():
 	#make weapons buttons appear
 	organise_weapons()
 
-	print_weapons()
-
 func _on_pick_up_spray_picked_up():
 	get_node("weapons to pick up/pick up spray").visible = false
 	get_node("weapons to pick up/pick up spray/CollisionShape2D").disabled = true
 	index_weapons("spray")
 	organise_weapons()
-
-	print_weapons()
 	
 func _on_pick_up_horn_picked_up():
 	get_node("weapons to pick up/pick up horn").visible = false
@@ -122,17 +119,13 @@ func _on_pick_up_horn_picked_up():
 	index_weapons("horn")
 	organise_weapons()
 
-	print_weapons()
-
 func _on_torch_button_pressed():
 	print_debug("button pressed torch")
-	$player/AnimatedSprite2D.flip_h = true
-	$player/AnimatedSprite2D.play("fire_torch")
-	var lion_pos = $lion.position
 	$lion/AnimatedSprite2D.flip_h = true
-	for i in range(10):
-		lion_pos.x -= i
 	$lion/AnimatedSprite2D.play("lion running")
+	var targetPos = ($player.position - $lion.position).normalized()
+	$lion.velocity = -targetPos * 600
+	$lion.move_and_slide()
 
 func _on_spray_button_pressed():
 	
