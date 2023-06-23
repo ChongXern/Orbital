@@ -10,7 +10,6 @@ func _physics_process(delta):
 	$AnimatedSprite2D.play()
 	#ally moves along the path
 	get_parent().set_progress(get_parent().get_progress() + speed * delta)
-	
 
 func _on_body_entered(body):
 	Global.check = true

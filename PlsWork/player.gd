@@ -4,6 +4,7 @@ class_name Player extends CharacterBody2D
 # var screen_size
 var current_dir = "none"
 signal killed
+signal current_player_position(position: Vector2)
 var currentWeapon = "none"
 var started_game = false
 var stopped = false
@@ -12,12 +13,13 @@ var isTorch = false
 var isHorn = false
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AnimatedSprite2D/GPUParticles2D.hide()
 	var moveDirection = Vector2.ZERO
 	moveDirection.x -= 1
 	velocity = moveDirection.normalized() * speed
-	$AnimatedSprite2D/GPUParticles2D.hide()
 	#move_and_slide()
 
 func compute_animation(current_dir):
@@ -36,7 +38,8 @@ func compute_animation(current_dir):
 			else:
 				anim.flip_h = false
 		else:
-			anim.play("idle")
+			anim.play("running")
+			move_body("left")
 	
 func move_body(current_dir):
 	var moveDirection = Vector2.ZERO
@@ -77,9 +80,12 @@ func handleInput():
 
 
 func _physics_process(delta):
+	print_debug("Position: ", position)
 	handleInput()
 	compute_animation(current_dir)
 	move_and_slide()
+	var playerPosition = position
+	emit_signal("current_player_position", playerPosition)
 
 func die():
 	killed.emit()

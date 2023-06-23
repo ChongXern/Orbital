@@ -2,9 +2,11 @@ extends Node2D
 var score
 var player = null
 
+
 @onready var hud = $hud
 @onready var start = false
 @onready var game_over = $game_over
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$hud/TagButton.hide() 
@@ -23,8 +25,13 @@ func _ready():
 	#player.killed.connect(_on_player_killed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _physics_process(delta):
+	$lion/AnimatedSprite2D.play("lion running")
+	var targetPos = ($player.position - $lion.position).normalized()
+	if $lion.position.distance_to($player.position) > 3:
+		$lion.velocity = targetPos * 600
+		$lion.move_and_slide()
+	
 
 #shows tag button on collition with any npc/ally
 func _on_ally_hit():

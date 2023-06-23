@@ -2,4 +2,4 @@
 extends Node
 
 var check = false
-var score = 100
+var score = 60

@@ -4,7 +4,7 @@ signal message_disappear
 @onready var PauseMenu = $PauseMenu
 
 #@onready var player_animation = get_parent().get_node("player")
-var score = 100
+var score = 60
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
