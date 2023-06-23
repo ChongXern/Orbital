@@ -5,7 +5,6 @@ var player = null
 
 @onready var hud = $hud
 @onready var start = false
-@onready var game_over = $game_over
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,6 +20,7 @@ func _ready():
 	$hud/torchButton.hide()
 	$hud/sprayButton.hide()
 	$hud/hornButton.hide()
+	$game_over.hide()
 	score = 60
 	#player.killed.connect(_on_player_killed)
 
@@ -32,7 +32,7 @@ func _physics_process(delta):
 	if $lion.position.distance_to($player.position) > 3:
 		$lion.velocity = targetPos * 600
 		$lion.move_and_slide()
-	print_debug($lion.position.distance_to($player.position))
+	#print_debug($lion.position.distance_to($player.position))
 
 #shows tag button on collition with any npc/ally
 func _on_ally_hit():
@@ -53,11 +53,23 @@ func _on_score_timer_timeout():
 
 func _on_player_killed():
 	await get_tree().create_timer(1.5).timeout
-	game_over.visible = true
+	$game_over.visible = true
 	
 var first_weapon = "none"
 var second_weapon = "none"
 var third_weapon = "none"
+
+func reorganise_weapon(weapon: String):
+	if (first_weapon == weapon):
+		first_weapon = second_weapon
+		second_weapon = third_weapon
+		third_weapon = "none"
+	elif (second_weapon == weapon):
+		second_weapon = third_weapon
+		third_weapon = "none"
+	elif (third_weapon == weapon):
+		third_weapon = "none"
+	organise_weapons()
 
 func index_weapons(weapon: String):
 	if first_weapon == "none":
@@ -68,11 +80,8 @@ func index_weapons(weapon: String):
 		third_weapon = weapon
 
 func organise_individual_weapon(index: int, weapon: String):
-	var buttonPos = Vector2(6901, 2620)
-	if (index == 2):
-		buttonPos.x = 6573
-	elif (index == 3):
-		buttonPos.x = 6245
+	var buttonPos = Vector2(6923, 2654)
+	buttonPos.x -= (index - 1) * 330
 	var _button
 	if (weapon == "torch"):
 		_button = $hud/torchButton
@@ -123,6 +132,7 @@ func _on_torch_button_pressed():
 	print_debug("button pressed torch")
 	$lion/AnimatedSprite2D.flip_h = true
 	$lion/AnimatedSprite2D.play("lion running")
+	$lion.position.x += 1
 	var targetPos = ($player.position - $lion.position).normalized()
 	$lion.velocity = -targetPos * 600
 	$lion.move_and_slide()

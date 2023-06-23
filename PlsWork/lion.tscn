@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://chhwplrq0xf3s" path="res://sprite animations/lion/lion_11.png" id="12_ekoqd"]
 [ext_resource type="Texture2D" uid="uid://dv83g1a1ld43g" path="res://sprite animations/lion/lion_12.png" id="13_2n6tj"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivhkd"]
+size = Vector2(617.5, 227)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_n5g63"]
 animations = [{
 "frames": [{
@@ -58,22 +61,21 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivhkd"]
-size = Vector2(617.5, 227)
-
 [node name="lion" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_nee8n")
 metadata/_edit_horizontal_guides_ = [-286.0, 283.0]
 metadata/_edit_vertical_guides_ = [-555.0]
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-112.25, -20.5)
+shape = SubResource("RectangleShape2D_ivhkd")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1.52588e-05, 7.62939e-06)
 scale = Vector2(0.348635, 0.348635)
 sprite_frames = SubResource("SpriteFrames_n5g63")
 animation = &"lion running"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-112.25, -20.5)
-shape = SubResource("RectangleShape2D_ivhkd")

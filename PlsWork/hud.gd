@@ -35,6 +35,8 @@ func _on_score_timer_timeout():
 	update_score(score)
 	if score == 0:
 		$Score.text = "times up!"
+		$blackRect.show()
+		get_tree().paused = true
 
 func update_score(score):
 	$Score.text = str(score)

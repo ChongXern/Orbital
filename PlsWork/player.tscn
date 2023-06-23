@@ -289,7 +289,7 @@ color_ramp = SubResource("GradientTexture1D_lcxsc")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jleid"]
 radius = 52.0
-height = 146.0
+height = 148.0
 
 [node name="player" type="CharacterBody2D" groups=["players"]]
 z_index = 1
