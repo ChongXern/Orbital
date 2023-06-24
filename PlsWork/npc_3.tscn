@@ -59,8 +59,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h2o0w"]
-radius = 437.0
-height = 1292.0
+radius = 801.0
+height = 1602.0
 
 [node name="npc3" type="Area2D"]
 y_sort_enabled = true

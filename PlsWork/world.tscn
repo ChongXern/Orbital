@@ -69,7 +69,7 @@
 [ext_resource type="Texture2D" uid="uid://bbkq2lcjiq54" path="res://sprite animations/weapons/pick up weapons/picked up spray.png" id="55_uwwfy"]
 [ext_resource type="Texture2D" uid="uid://b78ji528w7po6" path="res://sprite animations/weapons/pick up weapons/picked up horn.png" id="56_p6lo4"]
 [ext_resource type="Script" path="res://PathFollow2D_because_the_rotation_keeps_changing.gd" id="61_bpxsh"]
-[ext_resource type="Texture2D" uid="uid://d0hu10d23adcn" path="res://clb assets resized/star thing.png" id="70_tlqow"]
+[ext_resource type="Texture2D" path="res://clb assets resized/star thing.png" id="70_tlqow"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r0hfa"]
 texture = ExtResource("26_05p5k")
@@ -3203,6 +3203,7 @@ script = ExtResource("61_bpxsh")
 [node name="npc2" parent="npcPaths/Path2D2/PathFollow2D" instance=ExtResource("28_b5oh3")]
 z_index = 3
 rotation = 3.13427
+speed = 450
 
 [node name="Path2D3" type="Path2D" parent="npcPaths"]
 curve = SubResource("Curve2D_n31ya")
@@ -3244,6 +3245,7 @@ loop = false
 [node name="Area2D" parent="npcPaths/Path2D_ally/PathFollow2D" instance=ExtResource("37_2qjdf")]
 z_index = 4
 position = Vector2(-0.111328, 9.16699)
+speed = 450
 metadata/_edit_horizontal_guides_ = [186.0, -186.0]
 
 [node name="hud" parent="." instance=ExtResource("27_5kq3n")]

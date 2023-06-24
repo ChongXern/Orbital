@@ -63,8 +63,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vbfvl"]
-radius = 55.0
-height = 224.0
+radius = 145.0
+height = 290.0
 
 [node name="ally" type="Area2D"]
 y_sort_enabled = true
@@ -80,7 +80,7 @@ scale = Vector2(0.199785, 0.199571)
 sprite_frames = SubResource("SpriteFrames_3gva2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(19, -73)
+position = Vector2(24, -17)
 shape = SubResource("CapsuleShape2D_vbfvl")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

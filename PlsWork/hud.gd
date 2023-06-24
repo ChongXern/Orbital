@@ -2,7 +2,7 @@ extends CanvasLayer
 signal pressed_tag
 signal message_disappear
 @onready var PauseMenu = $PauseMenu
-var lionDistance
+var lionDistance: int
 
 #@onready var player_animation = get_parent().get_node("player")
 var score = 60
@@ -18,6 +18,7 @@ func _process(delta):
 	if Input.is_action_pressed("ui_cancel"):
 		PauseMenu.visible = true
 		get_tree().paused = true
+	$distanceToLion.text = str(lionDistance / 60, " m")
 
 func _on_tag_button_pressed():
 	$MessageTimer.start()
@@ -38,7 +39,6 @@ func _on_message_timer_timeout():
 
 func _on_score_timer_timeout():
 	score -= 1
-	$distanceToLion.text = str(lionDistance / 60, " m")
 	$Score.text = str(score)
 	if score == 0:
 		$Score.text = "times up!"
