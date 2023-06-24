@@ -3276,6 +3276,7 @@ icon = ExtResource("56_p6lo4")
 flat = true
 
 [node name="game_over" parent="hud" instance=ExtResource("45_hb08m")]
+visible = false
 anchors_preset = 9
 anchor_right = 0.0
 offset_right = 7800.0
@@ -3287,6 +3288,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(2162956, 0, 0, 2162957, 0, 0, 2162976, 0, 0, 2162975, 0, 0, 2162974, 0, 0, 2162943, 0, 0, 2162942, 0, 0, 2162928, 0, 0, 2162929, 0, 0, 2162930, 0, 0, 1966259, 0, 0, 1966258, 0, 0, 1900722, 0, 0, 1900723, 0, 0, 1966226, 0, 0, 1966227, 0, 0, 1966144, 0, 0, 1966145, 0, 0, 1900728, 0, 0, 1966265, 0, 0, 2031802, 0, 0, 2097338, 0, 1, 2162873, 0, 1, 2228408, 0, 1, 1900717, 65536, 0, 1966252, 65536, 0, 2031787, 65536, 0, 2097323, 65536, 1, 2162860, 65536, 1, 2228397, 65536, 1, 2162866, 0, 0, 2162867, 0, 0, 2228403, 0, 0, 2228402, 0, 0, 1573156, 0, 0, 1573170, 0, 0, 1573184, 0, 0, 2031768, 0, 0, 2097304, 0, 1, 2031757, 65536, 0, 2097293, 65536, 1, 1769612, 0, 0, 1769626, 0, 0, 2359450, 0, 0, 2359436, 0, 0, 1900653, 0, 0, 2162797, 0, 0, 1769544, 0, 0, 1769530, 0, 0, 2359354, 0, 0, 2359368, 0, 0, 1835111, 0, 0, 2228327, 0, 0, 1835104, 0, 0, 1835097, 0, 0, 2228313, 0, 0, 2228320, 0, 0, 1835126, 0, 0, 2031737, 0, 0, 2228342, 0, 0, 2228349, 0, 0, 2031744, 0, 0, 1835133, 0, 0, 1835140, 0, 0, 2228356, 0, 0, 2031708, 0, 0, 2031715, 0, 0, 1048674, 0, 0, 1048675, 0, 0, 1114212, 0, 0, 1179731, 0, 0, 1179795, 0, 0, 1179790, 65536, 0, 1179726, 65536, 0)
 
 [connection signal="lion_distance" from="." to="player" method="_on_world_branch_4_lion_distance"]
+[connection signal="lion_distance" from="." to="hud" method="_on_world_branch_4_lion_distance"]
 [connection signal="picked_up" from="weapons to pick up/pick up torch" to="." method="_on_pick_up_torch_picked_up"]
 [connection signal="picked_up" from="weapons to pick up/pick up spray" to="." method="_on_pick_up_spray_picked_up"]
 [connection signal="picked_up" from="weapons to pick up/pick up horn" to="." method="_on_pick_up_horn_picked_up"]

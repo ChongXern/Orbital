@@ -1,6 +1,6 @@
 class_name Player extends CharacterBody2D
 
-@export var speed = 600
+@export var speed = 500
 var current_dir = "left"
 signal killed
 var currentWeapon = "none"
