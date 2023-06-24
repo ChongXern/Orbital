@@ -153,7 +153,7 @@ func _on_horn_button_pressed():
 	isHorn = false
 	stopped = false
 
-func _on_world_branch_4_lion_distance(distance):
+func _on_world_lion_distance(distance):
 	distance_to_lion = distance
 
 func _on_try_again_button_pressed():

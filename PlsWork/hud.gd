@@ -59,7 +59,7 @@ func _on_pause_button_pressed():
 	get_tree().paused = true
 	PauseMenu.visible = true
 
-func _on_world_branch_4_lion_distance(distance):
+func _on_world_lion_distance(distance):
 	lionDistance = distance - 500
 
 func _on_quit_button_pressed():

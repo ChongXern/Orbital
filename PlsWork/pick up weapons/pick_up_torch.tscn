@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://pick up weapons/pick_up_torch.gd" id="1_l8rg4"]
 [ext_resource type="Texture2D" uid="uid://bndwy43w8gbqv" path="res://sprite animations/weapons/pick up weapons/fire torch weapon.png" id="1_rgvcp"]
-[ext_resource type="Texture2D" path="res://clb assets resized/star thing.png" id="2_rfwau"]
+[ext_resource type="Texture2D" uid="uid://d0hu10d23adcn" path="res://clb assets resized/star thing.png" id="2_rfwau"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qygq"]
 size = Vector2(80, 80)
@@ -45,6 +45,8 @@ _data = {
 }
 
 [node name="pick up torch" type="Area2D"]
+collision_layer = 512
+collision_mask = 2
 script = ExtResource("1_l8rg4")
 metadata/_edit_horizontal_guides_ = [-40.0, 40.0]
 metadata/_edit_vertical_guides_ = [-40.0, 40.0]

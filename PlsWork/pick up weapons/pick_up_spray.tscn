@@ -46,6 +46,7 @@ _data = {
 
 [node name="pick up spray" type="Area2D"]
 collision_layer = 512
+collision_mask = 2
 script = ExtResource("1_05xnv")
 metadata/_edit_horizontal_guides_ = [-40.0, 40.0]
 metadata/_edit_vertical_guides_ = [-40.0, 40.0]
