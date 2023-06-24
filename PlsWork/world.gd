@@ -3,8 +3,6 @@ var score
 var player = null
 var isLionRunningAway = false
 var lionDir = "none"
-
-
 @onready var hud = $hud
 @onready var start = false
 
@@ -131,22 +129,19 @@ func print_weapons():
 #torch is picked up
 func _on_pick_up_torch_picked_up():
 	#item disappears and collision is disabled
-	get_node("weapons to pick up/pick up torch").visible = false
-	get_node("weapons to pick up/pick up torch/CollisionShape2D").disabled = true
+	get_node("weapons to pick up/pick up torch").queue_free()
 	#set as which weapon
 	index_weapons("torch")
 	#make weapons buttons appear
 	organise_weapons()
 
 func _on_pick_up_spray_picked_up():
-	get_node("weapons to pick up/pick up spray").visible = false
-	get_node("weapons to pick up/pick up spray/CollisionShape2D").disabled = true
+	get_node("weapons to pick up/pick up spray").queue_free()
 	index_weapons("spray")
 	organise_weapons()
 	
 func _on_pick_up_horn_picked_up():
-	get_node("weapons to pick up/pick up horn").visible = false
-	get_node("weapons to pick up/pick up horn/CollisionShape2D").disabled = true
+	get_node("weapons to pick up/pick up horn").queue_free()
 	index_weapons("horn")
 	organise_weapons()
 
@@ -155,9 +150,7 @@ func _on_torch_button_pressed():
 	isLionRunningAway = true
 	await get_tree().create_timer(3).timeout
 	isLionRunningAway = false
-	$hud/torchButton.disabled = true
-	#$"weapons to pick up/pick up torch/CollisionShape2D".disabled = true
-	$hud/torchButton.hide()
+	$hud/torchButton.queue_free()
 	reorganise_weapons("torch")
 
 func _on_spray_button_pressed():
@@ -166,9 +159,7 @@ func _on_spray_button_pressed():
 	isLionRunningAway = true
 	await get_tree().create_timer(2.733).timeout
 	isLionRunningAway = false
-	$hud/sprayButton.disabled = true
-	#$"weapons to pick up/pick up spray/CollisionShape2D".disabled = true
-	$hud/sprayButton.hide()
+	$hud/sprayButton.queue_free()
 	reorganise_weapons("spray")
 
 
@@ -177,7 +168,5 @@ func _on_horn_button_pressed():
 	isLionRunningAway = true
 	await get_tree().create_timer(3).timeout
 	isLionRunningAway = false
-	$hud/hornButton.disabled = true
-	#$"weapons to pick up/pick up horn/CollisionShape2D".disabled = true
-	$hud/hornButton.hide()
+	$hud/hornButton.queue_free()
 	reorganise_weapons("horn")
