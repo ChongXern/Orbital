@@ -5,7 +5,6 @@ var isLionRunningAway = false
 var lionDir = "none"
 @onready var hud = $hud
 @onready var start = false
-signal gameOver
 signal lion_distance(distance: int)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,10 +32,18 @@ func _physics_process(delta):
 		if $lion.position.distance_to($player.position) > 3:
 			$lion.velocity = -targetPos * 600
 	$lion.move_and_slide()
-	#print_debug(get_distance_to_lion())
+	print_debug(compute_pythagoras_distance())
+	if compute_pythagoras_distance() <= 500:
+		_on_player_killed()
+		#print_debug(get_distance_to_lion())
 	
 func get_distance_to_lion() -> int:
 	return $lion.position.x - $player.position.x
+
+func compute_pythagoras_distance() -> int:
+	var xDiff = abs($lion.position.x - $player.position.x)
+	var yDiff = abs($lion.position.y - $player.position.y)
+	return int(sqrt(xDiff * xDiff + yDiff * yDiff))
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -51,7 +58,7 @@ func _ready():
 	$hud/torchButton.hide()
 	$hud/sprayButton.hide()
 	$hud/hornButton.hide()
-	$game_over.hide()
+	$hud/game_over.hide()
 	score = 60
 	#player.killed.connect(_on_player_killed)
 
@@ -73,8 +80,8 @@ func _on_score_timer_timeout():
 	Global
 
 func _on_player_killed():
-	await get_tree().create_timer(1.5).timeout
-	$game_over.visible = true
+	get_tree().paused = true
+	$hud/game_over.show()
 	
 var first_weapon = "none"
 var second_weapon = "none"

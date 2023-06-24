@@ -3040,9 +3040,9 @@ point_count = 17
 
 [sub_resource type="Curve2D" id="Curve2D_n31ya"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 23397, 1709, 0, 0, 0, 0, 18488, 1709, 0, 0, 0, 0, 17301, 2073, 0, 0, 0, 0, 15842, 2086, 0, 0, 0, 0, 15008, 1849, 0, 0, 0, 0, 12660, 2338, 0, 0, 0, 0, 10807, 2364, 0, 0, 0, 0, 10424, 2418, 0, 0, 0, 0, 8999, 2414, 0, 0, 0, 0, 8120, 1046, 0, 0, 0, 0, 7462, 952, 0, 0, 0, 0, 7123, 1848, 0, 0, 0, 0, 4855, 1773, 0, 0, 0, 0, 3, 1816)
+"points": PackedVector2Array(0, 0, 0, 0, 23397, 1709, 0, 0, 0, 0, 22116, 1766, 0, 0, 0, 0, 21094, 1787, 0, 0, 0, 0, 20899, 2557, 0, 0, 0, 0, 18516, 2496, 0, 0, 0, 0, 17301, 2073, 0, 0, 0, 0, 15842, 2086, 0, 0, 0, 0, 15008, 1849, 0, 0, 0, 0, 12660, 2338, 0, 0, 0, 0, 10807, 2364, 0, 0, 0, 0, 10424, 2418, 0, 0, 0, 0, 8999, 2414, 0, 0, 0, 0, 8120, 1046, 0, 0, 0, 0, 7462, 952, 0, 0, 0, 0, 7123, 1848, 0, 0, 0, 0, 4855, 1773, 0, 0, 0, 0, 3, 1816)
 }
-point_count = 14
+point_count = 17
 
 [sub_resource type="Curve2D" id="Curve2D_6kbpp"]
 _data = {
@@ -3063,6 +3063,18 @@ texture_region_size = Vector2i(80, 80)
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, -40, 40, 40, -40, 40)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(40, -40, 40, 40, -40, 40)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, -40, 40, -40, -40, 40)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, -40, 40, -40, 40, 40)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rrf6m"]
 texture = ExtResource("70_tlqow")
@@ -3084,11 +3096,10 @@ metadata/_edit_horizontal_guides_ = [1918.0, 2794.0, 254.0]
 metadata/_edit_vertical_guides_ = [12970.0, 15529.0, 17929.0, 4983.0, 9.0]
 
 [node name="weapons to pick up" type="Node2D" parent="."]
-visible = false
 position = Vector2(41, 19)
 
 [node name="pick up torch" parent="weapons to pick up" instance=ExtResource("53_bs6x8")]
-position = Vector2(20214, 1724)
+position = Vector2(16718, 1541)
 collision_layer = 512
 collision_mask = 2
 
@@ -3097,7 +3108,7 @@ position = Vector2(21885, 1727)
 collision_mask = 2
 
 [node name="pick up horn" parent="weapons to pick up" instance=ExtResource("54_f8mav")]
-position = Vector2(23809, 1721)
+position = Vector2(13700, 2226)
 collision_layer = 512
 collision_mask = 2
 
@@ -3162,16 +3173,6 @@ layer_5/y_sort_enabled = false
 layer_5/y_sort_origin = 0
 layer_5/z_index = 7
 layer_5/tile_data = PackedInt32Array()
-
-[node name="game_over" parent="." instance=ExtResource("45_hb08m")]
-visible = false
-anchors_preset = 9
-anchor_right = 0.0
-offset_left = 3863.0
-offset_top = 1752.0
-offset_right = 3863.0
-offset_bottom = 1752.0
-grow_horizontal = 1
 
 [node name="npcPaths" type="Node2D" parent="."]
 z_index = 1
@@ -3274,10 +3275,16 @@ offset_bottom = 2958.0
 icon = ExtResource("56_p6lo4")
 flat = true
 
+[node name="game_over" parent="hud" instance=ExtResource("45_hb08m")]
+anchors_preset = 9
+anchor_right = 0.0
+offset_right = 7800.0
+grow_horizontal = 1
+
 [node name="lion tilemap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_whvtr")
 format = 2
-layer_0/tile_data = PackedInt32Array(2162956, 0, 0, 2162957, 0, 0, 2162976, 0, 0, 2162975, 0, 0, 2162974, 0, 0, 2162943, 0, 0, 2162942, 0, 0, 2162928, 0, 0, 2162929, 0, 0, 2162930, 0, 0, 1966259, 0, 0, 1966258, 0, 0, 1900722, 0, 0, 1900723, 0, 0, 1966226, 0, 0, 1966227, 0, 0, 1966144, 0, 0, 1966145, 0, 0, 1900728, 0, 0, 1966265, 0, 0, 2031802, 0, 0)
+layer_0/tile_data = PackedInt32Array(2162956, 0, 0, 2162957, 0, 0, 2162976, 0, 0, 2162975, 0, 0, 2162974, 0, 0, 2162943, 0, 0, 2162942, 0, 0, 2162928, 0, 0, 2162929, 0, 0, 2162930, 0, 0, 1966259, 0, 0, 1966258, 0, 0, 1900722, 0, 0, 1900723, 0, 0, 1966226, 0, 0, 1966227, 0, 0, 1966144, 0, 0, 1966145, 0, 0, 1900728, 0, 0, 1966265, 0, 0, 2031802, 0, 0, 2097338, 0, 1, 2162873, 0, 1, 2228408, 0, 1, 1900717, 65536, 0, 1966252, 65536, 0, 2031787, 65536, 0, 2097323, 65536, 1, 2162860, 65536, 1, 2228397, 65536, 1, 2162866, 0, 0, 2162867, 0, 0, 2228403, 0, 0, 2228402, 0, 0, 1573156, 0, 0, 1573170, 0, 0, 1573184, 0, 0, 2031768, 0, 0, 2097304, 0, 1, 2031757, 65536, 0, 2097293, 65536, 1, 1769612, 0, 0, 1769626, 0, 0, 2359450, 0, 0, 2359436, 0, 0, 1900653, 0, 0, 2162797, 0, 0, 1769544, 0, 0, 1769530, 0, 0, 2359354, 0, 0, 2359368, 0, 0, 1835111, 0, 0, 2228327, 0, 0, 1835104, 0, 0, 1835097, 0, 0, 2228313, 0, 0, 2228320, 0, 0, 1835126, 0, 0, 2031737, 0, 0, 2228342, 0, 0, 2228349, 0, 0, 2031744, 0, 0, 1835133, 0, 0, 1835140, 0, 0, 2228356, 0, 0, 2031708, 0, 0, 2031715, 0, 0, 1048674, 0, 0, 1048675, 0, 0, 1114212, 0, 0, 1179731, 0, 0, 1179795, 0, 0, 1179790, 65536, 0, 1179726, 65536, 0)
 
 [connection signal="lion_distance" from="." to="player" method="_on_world_branch_4_lion_distance"]
 [connection signal="picked_up" from="weapons to pick up/pick up torch" to="." method="_on_pick_up_torch_picked_up"]
