@@ -3202,7 +3202,6 @@ script = ExtResource("61_bpxsh")
 
 [node name="npc2" parent="npcPaths/Path2D2/PathFollow2D" instance=ExtResource("28_b5oh3")]
 z_index = 3
-y_sort_enabled = true
 rotation = 3.13427
 
 [node name="Path2D3" type="Path2D" parent="npcPaths"]

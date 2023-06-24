@@ -26,6 +26,7 @@ func _on_tag_button_pressed():
 		$Tick.show()
 		$ScoreTimer.stop()
 		get_tree().paused = true
+		await get_tree().create_timer(3).timeout
 		#show game over
 		$Tick.hide()
 		$gameOverPanel.show()
