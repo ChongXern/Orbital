@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dd8qgse56k3ty"]
+[gd_scene load_steps=16 format=3 uid="uid://dd8qgse56k3ty"]
 
 [ext_resource type="Script" path="res://lion.gd" id="1_nee8n"]
 [ext_resource type="Texture2D" uid="uid://c6oy7pxfu3vfg" path="res://sprite animations/lion/lion_1.png" id="2_cot6f"]
@@ -13,6 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://csb2lok5qdpdx" path="res://sprite animations/lion/lion_10.png" id="11_2aioq"]
 [ext_resource type="Texture2D" uid="uid://chhwplrq0xf3s" path="res://sprite animations/lion/lion_11.png" id="12_ekoqd"]
 [ext_resource type="Texture2D" uid="uid://dv83g1a1ld43g" path="res://sprite animations/lion/lion_12.png" id="13_2n6tj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2vwho"]
+radius = 84.0
+height = 416.068
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n5g63"]
 animations = [{
@@ -58,31 +62,22 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivhkd"]
-size = Vector2(617.5, 227)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_vcw00"]
-radius = 1270.09
-
 [node name="lion" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
+collision_layer = 8
+collision_mask = 2
 script = ExtResource("1_nee8n")
 metadata/_edit_horizontal_guides_ = [-286.0, 283.0]
 metadata/_edit_vertical_guides_ = [-555.0]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-115, 131)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_2vwho")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1.52588e-05, 7.62939e-06)
 scale = Vector2(0.348635, 0.348635)
 sprite_frames = SubResource("SpriteFrames_n5g63")
 animation = &"lion running"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-112.25, -20.5)
-shape = SubResource("RectangleShape2D_ivhkd")
-
-[node name="detectionArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea"]
-shape = SubResource("CircleShape2D_vcw00")
-
-[connection signal="body_entered" from="detectionArea" to="." method="_on_detection_area_body_entered"]
-[connection signal="body_exited" from="detectionArea" to="." method="_on_detection_area_body_exited"]
