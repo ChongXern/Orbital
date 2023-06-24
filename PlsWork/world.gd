@@ -5,35 +5,37 @@ var isLionRunningAway = false
 var lionDir = "none"
 @onready var hud = $hud
 @onready var start = false
+signal gameOver
+signal lion_distance(distance: int)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	if distance_to_lion() >= 0:
+	var distToLion = get_distance_to_lion()
+	if distToLion >= 406:
 		lionDir == "left"
-	else:
+		$lion/AnimatedSprite2D.flip_h = false
+		print_debug("left")
+	elif distToLion < -114:
 		lionDir == "right"
+		$lion/AnimatedSprite2D.flip_h = true
+		print_debug("right")
+	else:
+		print_debug("neither")
 	# temporarily used for lion.gd since nodes don't work there for some reason
 	$lion/AnimatedSprite2D.play("lion running")
 	var targetPos
 	if isLionRunningAway:
-		if lionDir == "left":
-			$lion/AnimatedSprite2D.flip_h =  true
-		elif lionDir == "right":
-			$lion/AnimatedSprite2D.flip_h = false
+		$lion/AnimatedSprite2D.flip_h = not $lion/AnimatedSprite2D.flip_h 
 		targetPos = ($lion.position - $player.position).normalized()
 		$lion.velocity = targetPos * 450
 	else:
-		if lionDir == "left":
-			$lion/AnimatedSprite2D.flip_h = false
-		elif lionDir == "right":
-			$lion/AnimatedSprite2D.flip_h = true
 		targetPos = ($lion.position - $player.position).normalized()
 		if $lion.position.distance_to($player.position) > 3:
 			$lion.velocity = -targetPos * 600
 	$lion.move_and_slide()
-	print(distance_to_lion())
+	print_debug(get_distance_to_lion())
 	
-func distance_to_lion() -> float:
+func get_distance_to_lion() -> int:
 	return $lion.position.x - $player.position.x
 
 # Called when the node enters the scene tree for the first time.
@@ -147,6 +149,7 @@ func _on_pick_up_horn_picked_up():
 
 func _on_torch_button_pressed():
 	print_debug("torch used")
+	emit_signal("lion_distance", get_distance_to_lion())
 	isLionRunningAway = true
 	await get_tree().create_timer(3).timeout
 	isLionRunningAway = false
@@ -155,6 +158,7 @@ func _on_torch_button_pressed():
 
 func _on_spray_button_pressed():
 	print_debug("spray used")
+	emit_signal("lion_distance", get_distance_to_lion())
 	await get_tree().create_timer(0.267).timeout
 	isLionRunningAway = true
 	await get_tree().create_timer(2.733).timeout
@@ -165,6 +169,7 @@ func _on_spray_button_pressed():
 
 func _on_horn_button_pressed():
 	print_debug("horn used")
+	emit_signal("lion_distance", get_distance_to_lion())
 	isLionRunningAway = true
 	await get_tree().create_timer(3).timeout
 	isLionRunningAway = false

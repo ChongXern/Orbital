@@ -5,6 +5,7 @@ var current_dir = "left"
 signal killed
 var currentWeapon = "none"
 var started_game = false
+var distance_to_lion
 var stopped = false
 var isSpray = false
 var isTorch = false
@@ -139,3 +140,7 @@ func _on_horn_button_pressed():
 	$AnimatedSprite2D.play("running")
 	isHorn = false
 	stopped = false
+
+
+func _on_world_branch_4_lion_distance(distance):
+	distance_to_lion = distance

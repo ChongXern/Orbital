@@ -3242,6 +3242,7 @@ offset_bottom = 2958.0
 icon = ExtResource("56_p6lo4")
 flat = true
 
+[connection signal="lion_distance" from="." to="player" method="_on_world_branch_4_lion_distance"]
 [connection signal="picked_up" from="weapons to pick up/pick up torch" to="." method="_on_pick_up_torch_picked_up"]
 [connection signal="picked_up" from="weapons to pick up/pick up spray" to="." method="_on_pick_up_spray_picked_up"]
 [connection signal="picked_up" from="weapons to pick up/pick up horn" to="." method="_on_pick_up_horn_picked_up"]
