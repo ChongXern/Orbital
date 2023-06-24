@@ -33,7 +33,7 @@ func _physics_process(delta):
 			$lion.velocity = -targetPos * 525
 	$lion.move_and_slide()
 	print_debug(compute_pythagoras_distance())
-	if get_distance_to_lion() <= 500 or compute_pythagoras_distance() <= 300:
+	if compute_pythagoras_distance() <= 500:
 		_on_player_killed()
 		#print_debug(get_distance_to_lion())
 	emit_signal("lion_distance", compute_pythagoras_distance())

@@ -155,3 +155,6 @@ func _on_horn_button_pressed():
 
 func _on_world_branch_4_lion_distance(distance):
 	distance_to_lion = distance
+
+func _on_try_again_button_pressed():
+	get_tree().reload_current_scene()

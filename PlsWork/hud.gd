@@ -37,7 +37,7 @@ func _on_message_timer_timeout():
 
 func _on_score_timer_timeout():
 	score -= 1
-	$distanceToLion.text = str(lionDistance / 60, "m")
+	$distanceToLion.text = str(lionDistance / 60, " m")
 	$Score.text = str(score)
 	if score == 0:
 		$Score.text = "times up!"
