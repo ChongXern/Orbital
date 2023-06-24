@@ -65,6 +65,7 @@ height = 1292.0
 [node name="npc3" type="Area2D"]
 scale = Vector2(0.2, 0.2)
 collision_layer = 8
+collision_mask = 2
 script = ExtResource("1_hhy0d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

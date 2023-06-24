@@ -67,6 +67,8 @@ radius = 55.0
 height = 224.0
 
 [node name="ally" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
 script = ExtResource("1_p370i")
 metadata/_edit_vertical_guides_ = [-186.0, 186.0]
 metadata/_edit_horizontal_guides_ = [186.0, -186.0]

@@ -87,7 +87,10 @@ func die():
 func _on_torch_button_pressed():
 	isTorch = true
 	stopped = true
-	$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
+	if distance_to_lion >= 406:
+		$AnimatedSprite2D.flip_h = true
+	else:
+		$AnimatedSprite2D.flip_h = false
 	$AnimatedSprite2D.play("fire_torch")
 	$AnimatedSprite2D/torchAudio.play()
 	$AnimatedSprite2D/torchAudio.play()
@@ -102,7 +105,10 @@ func _on_torch_button_pressed():
 func _on_spray_button_pressed():
 	isSpray = true
 	stopped = true
-	$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
+	if distance_to_lion >= 406:
+		$AnimatedSprite2D.flip_h = true
+	else:
+		$AnimatedSprite2D.flip_h = false
 	$AnimatedSprite2D.play("pepper_spray_up")
 	await get_tree().create_timer(0.267).timeout
 	var spray_particle
@@ -127,6 +133,12 @@ func _on_spray_button_pressed():
 func _on_horn_button_pressed():
 	isHorn = true
 	stopped = true
+	if distance_to_lion >= 406:
+		$AnimatedSprite2D.flip_h = false
+		print_debug("horn pressed flipped false")
+	else:
+		$AnimatedSprite2D.flip_h = true
+		print_debug("horn pressed flipped true")
 	$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
 	$AnimatedSprite2D.play("air_horn_up")
 	await get_tree().create_timer(0.267).timeout
@@ -140,7 +152,6 @@ func _on_horn_button_pressed():
 	$AnimatedSprite2D.play("running")
 	isHorn = false
 	stopped = false
-
 
 func _on_world_branch_4_lion_distance(distance):
 	distance_to_lion = distance

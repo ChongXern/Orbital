@@ -14,13 +14,13 @@ func _physics_process(delta):
 	if distToLion >= 406:
 		lionDir == "left"
 		$lion/AnimatedSprite2D.flip_h = false
-		print_debug("left")
+		#print_debug("left")
 	elif distToLion < -114:
 		lionDir == "right"
 		$lion/AnimatedSprite2D.flip_h = true
-		print_debug("right")
-	else:
-		print_debug("neither")
+		#print_debug("right")
+	#else:
+		#print_debug("neither")
 	# temporarily used for lion.gd since nodes don't work there for some reason
 	$lion/AnimatedSprite2D.play("lion running")
 	var targetPos
@@ -33,7 +33,7 @@ func _physics_process(delta):
 		if $lion.position.distance_to($player.position) > 3:
 			$lion.velocity = -targetPos * 600
 	$lion.move_and_slide()
-	print_debug(get_distance_to_lion())
+	#print_debug(get_distance_to_lion())
 	
 func get_distance_to_lion() -> int:
 	return $lion.position.x - $player.position.x
