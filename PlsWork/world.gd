@@ -24,7 +24,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
+	
+	
 #shows tag button on collition with any npc/ally
 func _on_ally_hit():
 	$hud/TagButton.show()

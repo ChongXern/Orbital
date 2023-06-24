@@ -4,6 +4,7 @@ signal message_disappear
 @onready var PauseMenu = $PauseMenu
 #@onready var player_animation = get_parent().get_node("player")
 var score = 100
+var coins = Global.coins
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,6 +22,10 @@ func _on_tag_button_pressed():
 	if Global.check == true:
 		$Tick.show()
 		$ScoreTimer.stop()
+		$TagButton.hide()
+		coins += score
+		Global.coins = coins
+		
 	else:
 		$Cross.show()
 
@@ -35,6 +40,7 @@ func _on_score_timer_timeout():
 
 func update_score(score):
 	$Score.text = str(score)
+	Global.score = score
 
 func _on_resume_button_pressed():
 	PauseMenu.visible = false
@@ -47,3 +53,10 @@ func _on_exit_button_pressed():
 func _on_pause_button_pressed():
 	get_tree().paused = true
 	PauseMenu.visible = true
+
+
+func _on_back_to_main_pressed():
+	get_tree().paused = false
+	update_score(coins)
+	get_tree().change_scene_to_file("res://start_menu.tscn")
+	

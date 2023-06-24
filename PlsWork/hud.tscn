@@ -59,7 +59,7 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0.976471, 0.847059, 0.286275, 1)
 theme_override_fonts/font = ExtResource("3_3c3vy")
 theme_override_font_sizes/font_size = 350
-text = "60"
+text = "100"
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
@@ -74,6 +74,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="PauseMenu"]
 layout_mode = 1
@@ -90,6 +91,7 @@ grow_vertical = 2
 [node name="PanelContainer" type="PanelContainer" parent="PauseMenu/CenterContainer"]
 custom_minimum_size = Vector2(1000, 500)
 layout_mode = 2
+mouse_filter = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="PauseMenu/CenterContainer/PanelContainer"]
 layout_mode = 2
@@ -118,6 +120,13 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_3c3vy")
 theme_override_font_sizes/font_size = 100
 text = "EXIT"
+
+[node name="BackToMain" type="Button" parent="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("3_3c3vy")
+theme_override_font_sizes/font_size = 100
+text = "Home Menu"
 
 [node name="ColorRect" type="ColorRect" parent="PauseMenu"]
 layout_mode = 1
@@ -152,4 +161,5 @@ expand_icon = true
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="pressed" from="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/BackToMain" to="." method="_on_back_to_main_pressed"]
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]

@@ -1,7 +1,7 @@
 extends Node2D
 signal hit
 signal exit
-@export var speed = 400
+@export var speed = 300
 
 func _ready():
 	pass

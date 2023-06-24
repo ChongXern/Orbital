@@ -1,0 +1,98 @@
+[gd_scene load_steps=4 format=3 uid="uid://nr2stsv6daql"]
+
+[ext_resource type="Script" path="res://StartMenu.gd" id="1_6oaex"]
+[ext_resource type="Texture2D" uid="uid://t6p3ooef4n2g" path="res://CLB level 1.png" id="2_wikjw"]
+[ext_resource type="Texture2D" uid="uid://c5m4bm2jcldf1" path="res://coins.png" id="3_no3hd"]
+
+[node name="StartMenu" type="Node2D"]
+script = ExtResource("1_6oaex")
+
+[node name="CoinsIcon" type="Sprite2D" parent="."]
+position = Vector2(5342, 140)
+texture = ExtResource("3_no3hd")
+
+[node name="Coins" type="Label" parent="."]
+offset_left = 5465.0
+offset_top = 59.0
+offset_right = 5636.0
+offset_bottom = 199.0
+theme_override_font_sizes/font_size = 100
+text = "0"
+
+[node name="levels" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1425.0
+offset_top = 14.0
+offset_right = 4688.0
+offset_bottom = 2976.0
+mouse_filter = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="levels"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 833.0
+offset_top = 1.0
+offset_right = 2046.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="levels/ScrollContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="levels/ScrollContainer/VBoxContainer"]
+position = Vector2(1204.71, 580)
+scale = Vector2(2.30296, 3.38613)
+texture = ExtResource("2_wikjw")
+
+[node name="Label" type="Label" parent="levels/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 500
+text = "
+"
+
+[node name="CLB level 1" type="Button" parent="levels/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 500
+text = "CLB level 1"
+
+[node name="Label2" type="Label" parent="levels/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 500
+text = "
+"
+
+[node name="CLB level 6" type="Button" parent="levels/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 500
+text = "CLB level 6"
+
+[node name="Label3" type="Label" parent="levels/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 500
+text = "
+"
+
+[node name="PGP" type="Button" parent="levels/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 500
+text = "PGP"
+
+[node name="Label4" type="Label" parent="levels/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 500
+
+[node name="UTown" type="Button" parent="levels/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 500
+text = "UTown"
+
+[connection signal="pressed" from="levels/ScrollContainer/VBoxContainer/CLB level 1" to="." method="_on_clb_level_1_pressed"]

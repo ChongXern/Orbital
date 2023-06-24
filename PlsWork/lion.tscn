@@ -65,6 +65,7 @@ size = Vector2(617.5, 227)
 radius = 1270.09
 
 [node name="lion" type="CharacterBody2D"]
+collision_layer = 16
 script = ExtResource("1_nee8n")
 metadata/_edit_horizontal_guides_ = [-286.0, 283.0]
 metadata/_edit_vertical_guides_ = [-555.0]

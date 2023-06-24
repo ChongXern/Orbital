@@ -3,3 +3,4 @@ extends Node
 
 var check = false
 var score = 100
+var coins = 0

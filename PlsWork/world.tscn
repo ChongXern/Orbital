@@ -49,8 +49,8 @@
 [ext_resource type="Texture2D" uid="uid://p3706lbgdhr4" path="res://clb assets resized/mini couch 2.png" id="38_loasp"]
 [ext_resource type="Texture2D" uid="uid://bhyyacc4pb66o" path="res://clb assets resized/table 2 right.png" id="39_x54gi"]
 [ext_resource type="Texture2D" uid="uid://ccyx2c6tcwduc" path="res://clb assets resized/chair back.png" id="40_3oaqq"]
-[ext_resource type="Texture2D" path="res://clb assets resized/grey couch left.png" id="42_qpoil"]
-[ext_resource type="Texture2D" path="res://clb assets resized/grey couch right.png" id="43_g8knw"]
+[ext_resource type="Texture2D" uid="uid://empbkk8qcfmy" path="res://clb assets resized/grey couch left.png" id="42_qpoil"]
+[ext_resource type="Texture2D" uid="uid://fvt1w1e02ktp" path="res://clb assets resized/grey couch right.png" id="43_g8knw"]
 [ext_resource type="PackedScene" uid="uid://bscyew2uxbqpl" path="res://game_over.tscn" id="45_hb08m"]
 [ext_resource type="Texture2D" uid="uid://ciu5a0x45bvct" path="res://sprite animations/weapons/pick up weapons/UI fire torch.png" id="53_6bxcx"]
 [ext_resource type="PackedScene" uid="uid://b380d4ekl817o" path="res://pick up weapons/pick_up_torch.tscn" id="53_bs6x8"]
@@ -2489,7 +2489,7 @@ texture_region_size = Vector2i(80, 80)
 
 [sub_resource type="TileSet" id="TileSet_qjq0v"]
 tile_size = Vector2i(80, 80)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 4
 sources/0 = SubResource("TileSetAtlasSource_r0hfa")
 sources/1 = SubResource("TileSetAtlasSource_hs0is")
 sources/2 = SubResource("TileSetAtlasSource_qw3vn")
@@ -2564,7 +2564,7 @@ _data = {
 }
 point_count = 5
 
-[node name="world branch_4" type="Node2D"]
+[node name="world" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_218ld")
 
@@ -2579,6 +2579,7 @@ grow_horizontal = 1
 
 [node name="player" parent="." instance=ExtResource("1_vur2i")]
 position = Vector2(11718, 1700)
+collision_mask = 1
 
 [node name="lion" parent="." instance=ExtResource("3_8py68")]
 position = Vector2(13898, 1732)
@@ -2679,6 +2680,7 @@ curve = SubResource("Curve2D_lnj6p")
 [node name="PathFollow2D" type="PathFollow2D" parent="npcPaths/Path2D_ally"]
 position = Vector2(11301, 2294.17)
 rotation = 3.12197
+rotates = false
 
 [node name="ally" parent="npcPaths/Path2D_ally/PathFollow2D" instance=ExtResource("37_2qjdf")]
 position = Vector2(-0.111328, 9.16699)
@@ -2709,12 +2711,14 @@ offset_bottom = 8.0
 
 [node name="pick up torch" parent="weapons to pick up" instance=ExtResource("53_bs6x8")]
 position = Vector2(6850, 2040)
+collision_layer = 512
 
 [node name="pick up spray" parent="weapons to pick up" instance=ExtResource("55_txtmg")]
 position = Vector2(9730, 1721)
 
 [node name="pick up horn" parent="weapons to pick up" instance=ExtResource("54_f8mav")]
 position = Vector2(16050, 2040)
+collision_layer = 512
 
 [connection signal="exit" from="npcPaths/Path2D2/PathFollow2D/npc2" to="." method="_on_ally_exit"]
 [connection signal="hit" from="npcPaths/Path2D2/PathFollow2D/npc2" to="." method="_on_ally_hit"]
@@ -2722,6 +2726,8 @@ position = Vector2(16050, 2040)
 [connection signal="hit" from="npcPaths/Path2D3/PathFollow2D/npc3" to="." method="_on_ally_hit"]
 [connection signal="exit" from="npcPaths/Path2D4/PathFollow2D/npc4" to="." method="_on_ally_exit"]
 [connection signal="hit" from="npcPaths/Path2D4/PathFollow2D/npc4" to="." method="_on_ally_hit"]
+[connection signal="exit" from="npcPaths/Path2D_ally/PathFollow2D/ally" to="." method="_on_ally_exit"]
+[connection signal="hit" from="npcPaths/Path2D_ally/PathFollow2D/ally" to="." method="_on_ally_hit"]
 [connection signal="message_disappear" from="hud" to="." method="_on_hud_message_disappear"]
 [connection signal="pressed_tag" from="hud" to="." method="_on_hud_pressed_tag"]
 [connection signal="pressed" from="hud/torchButton" to="." method="_on_torch_button_pressed"]

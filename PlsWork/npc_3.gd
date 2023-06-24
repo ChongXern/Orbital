@@ -12,6 +12,7 @@ func _physics_process(delta):
 	get_parent().set_progress(get_parent().get_progress() + speed * delta)
 
 func _on_body_entered(body):
+	Global.check = false
 	hit.emit()
 
 

@@ -63,10 +63,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vbfvl"]
-radius = 55.0
-height = 224.0
+radius = 92.0
+height = 306.0
 
 [node name="ally" type="Area2D"]
+collision_layer = 2
 script = ExtResource("1_p370i")
 metadata/_edit_vertical_guides_ = [-186.0, 186.0]
 metadata/_edit_horizontal_guides_ = [186.0, -186.0]
