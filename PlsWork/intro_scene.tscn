@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://ceuxld4wnrgpi"]
+
+[ext_resource type="Script" path="res://Intro_scene.gd" id="1_50rdk"]
+[ext_resource type="Texture2D" uid="uid://i60kh1qq07gm" path="res://campus_crisis logo.png" id="2_iwxxr"]
+[ext_resource type="FontFile" uid="uid://87gla4t0j7vs" path="res://addons/denmark-regular-webfont.ttf" id="3_8jgg1"]
+
+[sub_resource type="Animation" id="Animation_6p7q7"]
+resource_name = "black_screen"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uf45v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_b1dhp"]
+resource_name = "black_out"
+length = 3.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rloib"]
+_data = {
+"RESET": SubResource("Animation_uf45v"),
+"black_out": SubResource("Animation_b1dhp"),
+"black_screen": SubResource("Animation_6p7q7")
+}
+
+[node name="Intro_scene" type="Node2D"]
+script = ExtResource("1_50rdk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3899, 1492.5)
+scale = Vector2(6.52007, 4.51502)
+texture = ExtResource("2_iwxxr")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 4138.0
+offset_top = 2074.0
+offset_right = 5204.0
+offset_bottom = 2178.0
+theme_override_colors/font_color = Color(0.278431, 0.623529, 0.972549, 1)
+theme_override_fonts/font = ExtResource("3_8jgg1")
+theme_override_font_sizes/font_size = 100
+text = "BY TEAM OCTAGON"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 7812.0
+offset_bottom = 2999.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rloib")
+}
