@@ -8,6 +8,7 @@ func _ready():
 
 func _physics_process(delta):
 	$AnimatedSprite2D.play()
+	Global.check = false
 	#npc moves along the path
 	get_parent().set_progress(get_parent().get_progress() + speed * delta)
 

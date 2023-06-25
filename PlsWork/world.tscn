@@ -2948,27 +2948,27 @@ point_count = 14
 
 [sub_resource type="Curve2D" id="Curve2D_bapw3"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 4030, 2141, 0, 0, 0, 0, 3421, 2132, 0, 0, 0, 0, 2964, 2132, 0, 0, 0, 0, 2593, 1903, 0, 0, 0, 0, 1851, 1856, 0, 0, 0, 0, 1147, 1808, 0, 0, 0, 0, 644, 1781, 0, 0, 0, 0, 29, 1702)
+"points": PackedVector2Array(0, 0, 0, 0, 25111, 1129, 0, 0, 0, 0, 24731, 1145, 0, 0, 0, 0, 23569, 1147, 0, 0, 0, 0, 22621, 1117, 0, 0, 0, 0, 22351, 1372, 0, 0, 0, 0, 22077, 1368, 0, 0, 0, 0, 21885, 1070, 0, 0, 0, 0, 18728, 1106, 0, 0, 0, 0, 18253, 1664, 0, 0, 0, 0, 17577, 2085, 0, 0, 0, 0, 16059, 1456, 0, 0, 0, 0, 15685, 1202, 0, 0, 0, 0, 14842, 968, 0, 0, 0, 0, 13379, 1040, 0, 0, 0, 0, 12892, 2853, 0, 0, 0, 0, 11166, 2830, 0, 0, 0, 0, 10630, 2690, 0, 0, 0, 0, 9069, 2715, 0, 0, 0, 0, 8808, 2252, 0, 0, 0, 0, 6622, 2222, 0, 0, 0, 0, 4079, 1904, 0, 0, 0, 0, 7, 1837)
 }
-point_count = 8
+point_count = 22
 
 [sub_resource type="Curve2D" id="Curve2D_n31ya"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 6610, 2775, 0, 0, 0, 0, 5930, 2783, 0, 0, 0, 0, 5069, 2428, 0, 0, 0, 0, 4730, 1899, 0, 0, 0, 0, 3808, 1846, 0, 0, 0, 0, 3106, 1922, 0, 0, 0, 0, 2776, 1869, 0, 0, 0, 0, 1994, 2056, 0, 0, 0, 0, 1300, 1875, 0, 0, 0, 0, 947, 1904, 0, 0, 0, 0, 17, 1929)
+"points": PackedVector2Array(0, 0, 0, 0, 22739, 1778, 0, 0, 0, 0, 21121, 1762, 0, 0, 0, 0, 20945, 2559, 0, 0, 0, 0, 18626, 2489, 0, 0, 0, 0, 16813, 2160, 0, 0, 0, 0, 15431, 2642, 0, 0, 0, 0, 14917, 2231, 0, 0, 0, 0, 13432, 2201, 0, 0, 0, 0, 13259, 1188, 0, 0, 0, 0, 12602, 1261, 0, 0, 0, 0, 12133, 1803, 0, 0, 0, 0, 11000, 1881, 0, 0, 0, 0, 10658, 2881, 0, 0, 0, 0, 9057, 2916, 0, 0, 0, 0, 8824, 1896, 0, 0, 0, 0, 6770, 2136, 0, 0, 0, 0, 6642, 2859, 0, 0, 0, 0, 5930, 2748, 0, 0, 0, 0, 4009, 2593, 0, 0, 0, 0, 20, 2556)
 }
-point_count = 11
+point_count = 20
 
 [sub_resource type="Curve2D" id="Curve2D_6kbpp"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 5381, 1637, 0, 0, 0, 0, 4763, 1608, 0, 0, 0, 0, 3792, 1628, 0, 0, 0, 0, 2831, 1742, 0, 0, 0, 0, 2089, 1732, 0, 0, 0, 0, 1157, 1799, 0, 0, 0, 0, 605, 1827, 0, 0, 0, 0, 7, 1256)
+"points": PackedVector2Array(0, 0, 0, 0, 21387, 1112, 0, 0, 0, 0, 18317, 1027, 0, 0, 0, 0, 17211, 982, 0, 0, 0, 0, 15851, 1011, 0, 0, 0, 0, 15900, 1601, 0, 0, 0, 0, 15659, 1708, 0, 0, 0, 0, 11101, 1674, 0, 0, 0, 0, 9586, 2329, 0, 0, 0, 0, 8636, 2875, 0, 0, 0, 0, 7905, 2883, 0, 0, 0, 0, 7862, 2736, 0, 0, 0, 0, 7554, 2519, 0, 0, 0, 0, 7348, 2375, 0, 0, 0, 0, 6134, 1679, 0, 0, 0, 0, 4242, 1391, 0, 0, 0, 0, 7, 1256)
 }
-point_count = 8
+point_count = 16
 
 [sub_resource type="Curve2D" id="Curve2D_lnj6p"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 11301, 2294.17, 0, 0, 0, 0, 8499, 2349.17, 0, 0, 0, 0, 4808, 2231.83, 0, 0, 0, 0, 4637, 2378.5, 0, 0, 0, 0, 65, 2530.67)
+"points": PackedVector2Array(0, 0, 0, 0, 25577, 1344.36, 0, 0, 0, 0, 23724, 1349.36, 0, 0, 0, 0, 21903, 1360.36, 0, 0, 0, 0, 18855, 1255.36, 0, 0, 0, 0, 18127, 1054.36, 0, 0, 0, 0, 17094, 1081.36, 0, 0, 0, 0, 16436, 1292.36, 0, 0, 0, 0, 15675, 1281.36, 0, 0, 0, 0, 14916, 1134.36, 0, 0, 0, 0, 13767, 917.326, 0, 0, 0, 0, 13069, -140.506, 0, 0, 0, 0, 12484, 10.36, 0, 0, 0, 0, 11610, -77.64, 0, 0, 0, 0, 10902, -182.64, 0, 0, 0, 0, 10767, 46.36, 0, 0, 0, 0, 10687, 300.36, 0, 0, 0, 0, 10087, 545.36, 0, 0, 0, 0, 9867, 155.36, 0, 0, 0, 0, 8968, 633.36, 0, 0, 0, 0, 8399, 1304.36, 0, 0, 0, 0, 7387, 1271.36, 0, 0, 0, 0, 6778, 1165.36, 0, 0, 0, 0, 6730, 1540.36, 0, 0, 0, 0, 6454, 1674.36, 0, 0, 0, 0, 5861, 1192.36, 0, 0, 0, 0, 4773, 1195.36, 0, 0, 0, 0, 4291, 1713.36, 0, 0, 0, 0, 4078, 1310.36, 0, 0, 0, 0, 2165, 1346.36, 0, 0, 0, 0, 339, 1410.36, 0, 0, 0, 0, 19, 1382.36)
 }
-point_count = 5
+point_count = 31
 
 [node name="world" type="Node2D"]
 y_sort_enabled = true
@@ -2977,6 +2977,7 @@ metadata/_edit_horizontal_guides_ = [1918.0, 2794.0, 254.0]
 metadata/_edit_vertical_guides_ = [12970.0, 15529.0, 17929.0, 4983.0, 9.0]
 
 [node name="game_over" parent="." instance=ExtResource("45_hb08m")]
+visible = false
 anchors_preset = 9
 anchor_right = 0.0
 offset_left = 3863.0
@@ -2990,7 +2991,7 @@ position = Vector2(25072, 1610)
 collision_layer = 2
 
 [node name="lion" parent="." instance=ExtResource("3_8py68")]
-position = Vector2(25876, 1675)
+position = Vector2(26837, 2145)
 
 [node name="TileMap new" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -3048,57 +3049,56 @@ loop = false
 curve = SubResource("Curve2D_bapw3")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="npcPaths/Path2D2"]
-position = Vector2(4030, 2141)
+position = Vector2(25111, 1129)
 rotation = -3.12682
 rotates = false
 loop = false
 
 [node name="npc2" parent="npcPaths/Path2D2/PathFollow2D" instance=ExtResource("28_b5oh3")]
 z_index = 1
-position = Vector2(4179.35, 1617.44)
+position = Vector2(-15.3086, 182.246)
 rotation = 3.13427
 
 [node name="Path2D3" type="Path2D" parent="npcPaths"]
 curve = SubResource("Curve2D_n31ya")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="npcPaths/Path2D3"]
-position = Vector2(6610, 2775)
+position = Vector2(22739, 1778)
 rotation = 3.12983
 rotates = false
 loop = false
 
 [node name="npc3" parent="npcPaths/Path2D3/PathFollow2D" instance=ExtResource("29_o2yaa")]
 z_index = 1
+position = Vector2(2.74219, 192.045)
 rotation = -3.15562
 
 [node name="Path2D4" type="Path2D" parent="npcPaths"]
 curve = SubResource("Curve2D_6kbpp")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="npcPaths/Path2D4"]
-position = Vector2(5381, 1637)
+position = Vector2(21387, 1112)
 rotation = -3.0947
 rotates = false
 loop = false
 
 [node name="npc4" parent="npcPaths/Path2D4/PathFollow2D" instance=ExtResource("30_p1uyv")]
 z_index = 1
-position = Vector2(-132.977, 46.2842)
+position = Vector2(-11.2148, 187.731)
 rotation = -3.21085
 metadata/_edit_vertical_guides_ = [-187.0]
 
 [node name="Path2D_ally" type="Path2D" parent="npcPaths"]
 position = Vector2(0, 1153.64)
-scale = Vector2(1, 0.545455)
 curve = SubResource("Curve2D_lnj6p")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="npcPaths/Path2D_ally"]
-position = Vector2(11301, 2294.17)
-rotation = 3.12197
+position = Vector2(25577, 1344.36)
+rotation = 3.13889
+rotates = false
 
 [node name="ally" parent="npcPaths/Path2D_ally/PathFollow2D" instance=ExtResource("37_2qjdf")]
-position = Vector2(-0.111328, 9.16699)
-rotation = -3.12947
-scale = Vector2(1, 1.83333)
+position = Vector2(-0.505859, 187.999)
 
 [node name="hud" parent="." instance=ExtResource("27_5kq3n")]
 metadata/_edit_vertical_guides_ = [25957.0]
@@ -3147,6 +3147,8 @@ position = Vector2(23809, 1721)
 [connection signal="hit" from="npcPaths/Path2D3/PathFollow2D/npc3" to="." method="_on_ally_hit"]
 [connection signal="exit" from="npcPaths/Path2D4/PathFollow2D/npc4" to="." method="_on_ally_exit"]
 [connection signal="hit" from="npcPaths/Path2D4/PathFollow2D/npc4" to="." method="_on_ally_hit"]
+[connection signal="exit" from="npcPaths/Path2D_ally/PathFollow2D/ally" to="." method="_on_ally_exit"]
+[connection signal="hit" from="npcPaths/Path2D_ally/PathFollow2D/ally" to="." method="_on_ally_hit"]
 [connection signal="message_disappear" from="hud" to="." method="_on_hud_message_disappear"]
 [connection signal="pressed_tag" from="hud" to="." method="_on_hud_pressed_tag"]
 [connection signal="pressed" from="hud/gameOverPanel/try again button" to="player" method="_on_try_again_button_pressed"]
