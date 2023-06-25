@@ -1,6 +1,7 @@
 extends Node2D
 signal hit
 signal exit
+signal ally_tagged(tagged: bool)
 @export var speed = 400
 
 func _ready():
@@ -15,6 +16,7 @@ func _process(delta):
 func _on_body_entered(body):
 	Global.check = true
 	hit.emit()
+	ally_tagged.emit(true)
 	print_debug("hit.emit()")
 
 

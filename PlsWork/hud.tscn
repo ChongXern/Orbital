@@ -153,15 +153,24 @@ layout_mode = 2
 
 [node name="ResumeButton" type="Button" parent="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 1
 theme_override_fonts/font = ExtResource("3_3c3vy")
 theme_override_font_sizes/font_size = 100
 text = "RESUME"
 
 [node name="ExitButton" type="Button" parent="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 1
 theme_override_fonts/font = ExtResource("3_3c3vy")
 theme_override_font_sizes/font_size = 100
 text = "EXIT"
+
+[node name="backtohome" type="Button" parent="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("3_3c3vy")
+theme_override_font_sizes/font_size = 100
+text = "BACK TO HOME"
 
 [node name="ColorRect" type="ColorRect" parent="PauseMenu"]
 layout_mode = 1
@@ -253,6 +262,7 @@ text = "QUIT"
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="pressed" from="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/backtohome" to="." method="_on_backtohome_pressed"]
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="gameOverPanel/try again button" to="." method="_on_try_again_button_pressed"]
 [connection signal="pressed" from="gameOverPanel/quit button" to="." method="_on_quit_button_pressed"]

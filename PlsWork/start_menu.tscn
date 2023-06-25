@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://nr2stsv6daql"]
+[gd_scene load_steps=3 format=3 uid="uid://nr2stsv6daql"]
 
 [ext_resource type="Script" path="res://StartMenu.gd" id="1_6oaex"]
-[ext_resource type="Texture2D" uid="uid://t6p3ooef4n2g" path="res://CLB level 1.png" id="2_wikjw"]
 [ext_resource type="Texture2D" uid="uid://c5m4bm2jcldf1" path="res://coins.png" id="3_no3hd"]
 
 [node name="StartMenu" type="Node2D"]
@@ -47,7 +46,6 @@ size_flags_vertical = 4
 [node name="Sprite2D" type="Sprite2D" parent="levels/ScrollContainer/VBoxContainer"]
 position = Vector2(1204.71, 580)
 scale = Vector2(2.30296, 3.38613)
-texture = ExtResource("2_wikjw")
 
 [node name="Label" type="Label" parent="levels/ScrollContainer/VBoxContainer"]
 layout_mode = 2

@@ -3,6 +3,8 @@ signal pressed_tag
 signal message_disappear
 @onready var PauseMenu = $PauseMenu
 var lionDistance: int
+var isAllyTagged = false
+var Coins = Global.coins
 
 #@onready var player_animation = get_parent().get_node("player")
 var score = 60
@@ -22,15 +24,19 @@ func _process(delta):
 
 func _on_tag_button_pressed():
 	$MessageTimer.start()
-	if Global.check == true:
+	if isAllyTagged == true:
 		$blackRect.show()
 		$Tick.show()
 		$ScoreTimer.stop()
 		get_tree().paused = true
 		await get_tree().create_timer(3).timeout
+		Coins += score
+		Global.coins = Coins
+		get_tree().paused = false
+		get_tree().change_scene_to_file("res://start_menu.tscn")
 		#show game over
-		$Tick.hide()
-		$gameOverPanel.show()
+		#$Tick.hide()
+		#$gameOverPanel.show()
 	else:
 		$Cross.show()
 
@@ -67,3 +73,12 @@ func _on_quit_button_pressed():
 
 func _on_try_again_button_pressed():
 	get_tree().reload_current_scene()
+
+
+func _on_ally_ally_tagged(tagged):
+	isAllyTagged = true
+
+
+func _on_backtohome_pressed():
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://start_menu.tscn")

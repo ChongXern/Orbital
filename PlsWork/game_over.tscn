@@ -23,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_n0vxi")
 metadata/_edit_vertical_guides_ = [7800.0, 3900.0, 3720.0, 4080.0]
 
@@ -48,6 +49,7 @@ offset_right = 1401.0
 offset_bottom = 471.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_163rp")
 
 [node name="game over label" type="Label" parent="Panel"]
