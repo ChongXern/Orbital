@@ -1,0 +1,13 @@
+TileMap
+CollisionShape2D
+StaticBody2D
+PathFollow2D
+Path2D
+Timer
+RigidBody2D
+CharacterBody2D
+Marker2D
+Node
+VisibleOnScreenNotifier2D
+AnimatedSprite2D
+Area2D

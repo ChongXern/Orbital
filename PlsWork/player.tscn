@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cfqusdtmjtapf"]
+[gd_scene load_steps=55 format=3 uid="uid://cfqusdtmjtapf"]
 
 [ext_resource type="Texture2D" uid="uid://dahlo6j5la5ye" path="res://sprite animations/main player/main_player_1.png" id="1_2my5a"]
 [ext_resource type="Script" path="res://player.gd" id="1_o1uar"]
@@ -36,10 +36,16 @@
 [ext_resource type="Texture2D" uid="uid://dh8eeimfi454c" path="res://sprite animations/weapons/fire torch/torch_16.png" id="22_bceud"]
 [ext_resource type="Texture2D" uid="uid://bi33o2arkt0ws" path="res://sprite animations/weapons/fire torch/torch_17.png" id="23_vithk"]
 [ext_resource type="Texture2D" uid="uid://ku0fe7r4s8p" path="res://sprite animations/weapons/pepper spray 2/pepper_spray_4.png" id="24_06bju"]
+[ext_resource type="Texture2D" uid="uid://sgn0an0mruhs" path="res://sprite animations/main player/idle animation/idle_player_1.png" id="24_qspgu"]
 [ext_resource type="Texture2D" uid="uid://b3koh11epc108" path="res://sprite animations/weapons/pepper spray 2/pepper_spray_3.png" id="25_2bgjo"]
+[ext_resource type="Texture2D" uid="uid://mpuj85eroaxg" path="res://sprite animations/main player/idle animation/idle_player_2.png" id="25_wr2he"]
+[ext_resource type="Texture2D" uid="uid://dk3j4x3ca7tqx" path="res://sprite animations/main player/idle animation/idle_player_3.png" id="26_5wvwe"]
 [ext_resource type="Texture2D" uid="uid://ys6s54g8ogvg" path="res://sprite animations/weapons/pepper spray 2/pepper_spray_2.png" id="26_stu27"]
 [ext_resource type="Texture2D" uid="uid://dtmrgd13n2xvd" path="res://sprite animations/weapons/pepper spray 2/pepper_spray_1.png" id="27_3nqnm"]
 [ext_resource type="Texture2D" uid="uid://d2rw7qhs4eer1" path="res://sprite animations/weapons/pepper spray/spray powder.png" id="40_h06kh"]
+[ext_resource type="AudioStream" uid="uid://rlecwqnjsllk" path="res://audio/air horn sound effect.mp3" id="44_q4xxa"]
+[ext_resource type="AudioStream" uid="uid://bhapb6014s4n5" path="res://audio/pepper spray sound effect.mp3" id="45_g200a"]
+[ext_resource type="AudioStream" uid="uid://jsuowk4xnmug" path="res://audio/fire torch sound effect.mp3" id="46_0k3o0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vcdb4"]
 animations = [{
@@ -161,6 +167,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("24_qspgu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_wr2he")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_5wvwe")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("24_06bju")
 }, {
 "duration": 1.0,
@@ -260,7 +280,7 @@ gradient = SubResource("Gradient_eklpl")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1jifa"]
 particle_flag_disable_z = true
-direction = Vector3(-1, 2.08165e-12, 2.08165e-12)
+direction = Vector3(1, 2.08165e-12, 2.08165e-12)
 spread = 22.5
 gravity = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
 initial_velocity_min = 250.0
@@ -270,11 +290,29 @@ orbit_velocity_max = 0.0
 scale_min = 0.5
 color_ramp = SubResource("GradientTexture1D_lcxsc")
 
+[sub_resource type="Gradient" id="Gradient_8qdsp"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_m2c11"]
+gradient = SubResource("Gradient_8qdsp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2lb43"]
+particle_flag_disable_z = true
+direction = Vector3(-1, 2.08165e-12, 2.08165e-12)
+spread = 22.5
+gravity = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.5
+color_ramp = SubResource("GradientTexture1D_m2c11")
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jleid"]
 radius = 52.0
-height = 146.0
+height = 148.0
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["players"]]
 z_index = 1
 y_sort_enabled = true
 collision_mask = 5
@@ -286,15 +324,31 @@ y_sort_enabled = true
 position = Vector2(39, 61)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_vcdb4")
-animation = &"fire_torch"
+animation = &"idle"
 offset = Vector2(2.08165e-12, -40)
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="AnimatedSprite2D"]
-position = Vector2(-865, -420)
+[node name="particles_right" type="GPUParticles2D" parent="AnimatedSprite2D"]
+position = Vector2(855, -410)
 scale = Vector2(5, 5)
 amount = 45
 process_material = SubResource("ParticleProcessMaterial_1jifa")
 texture = ExtResource("40_h06kh")
+
+[node name="particles_left" type="GPUParticles2D" parent="AnimatedSprite2D"]
+position = Vector2(-830, -415)
+amount = 45
+process_material = SubResource("ParticleProcessMaterial_2lb43")
+texture = ExtResource("40_h06kh")
+
+[node name="hornAudio" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
+stream = ExtResource("44_q4xxa")
+
+[node name="sprayAudio" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
+stream = ExtResource("45_g200a")
+
+[node name="torchAudio" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
+stream = ExtResource("46_0k3o0")
+volume_db = 2.24
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
@@ -306,7 +360,7 @@ shape = SubResource("CapsuleShape2D_jleid")
 zoom = Vector2(3, 3)
 limit_left = 0
 limit_top = 0
-limit_right = 260000
+limit_right = 26009
 limit_bottom = 3120
 limit_smoothed = true
 rotation_smoothing_enabled = true

@@ -1,20 +1,67 @@
-[gd_scene load_steps=4 format=3 uid="uid://b380d4ekl817o"]
+[gd_scene load_steps=8 format=3 uid="uid://b380d4ekl817o"]
 
 [ext_resource type="Script" path="res://pick up weapons/pick_up_torch.gd" id="1_l8rg4"]
 [ext_resource type="Texture2D" uid="uid://bndwy43w8gbqv" path="res://sprite animations/weapons/pick up weapons/fire torch weapon.png" id="1_rgvcp"]
+[ext_resource type="Texture2D" path="res://clb assets resized/star thing.png" id="2_rfwau"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qygq"]
 size = Vector2(80, 80)
+
+[sub_resource type="Animation" id="Animation_m6pu2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("star:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_4e4uy"]
+resource_name = "spinning animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("star:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.5708]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5621u"]
+_data = {
+"RESET": SubResource("Animation_m6pu2"),
+"spinning animation": SubResource("Animation_4e4uy")
+}
 
 [node name="pick up torch" type="Area2D"]
 script = ExtResource("1_l8rg4")
 metadata/_edit_horizontal_guides_ = [-40.0, 40.0]
 metadata/_edit_vertical_guides_ = [-40.0, 40.0]
 
+[node name="star" type="Sprite2D" parent="."]
+scale = Vector2(1.46508, 1.46508)
+texture = ExtResource("2_rfwau")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_rgvcp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8qygq")
+
+[node name="spinning star" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5621u")
+}
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

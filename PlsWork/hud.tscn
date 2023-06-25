@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://qeitfgj53ewa"]
+[gd_scene load_steps=10 format=3 uid="uid://qeitfgj53ewa"]
 
 [ext_resource type="Script" path="res://hud.gd" id="1_rp0qk"]
 [ext_resource type="Texture2D" uid="uid://dfu00fm1bj00g" path="res://sprite animations/weapons/tag.png" id="2_0ymmv"]
@@ -9,10 +9,34 @@
 [ext_resource type="Texture2D" uid="uid://dn28nocehy4q8" path="res://sprite animations/npc 1/npc ally.png" id="5_cbc5w"]
 [ext_resource type="Texture2D" uid="uid://bnibhf4p2ovin" path="res://play.png" id="6_oudgg"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hl24h"]
+bg_color = Color(1, 0, 0, 0.443137)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.364706, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(0, 0, 0, 0.858824)
+
 [node name="hud" type="CanvasLayer"]
 script = ExtResource("1_rp0qk")
 metadata/_edit_vertical_guides_ = [3900.0]
 metadata/_edit_horizontal_guides_ = [3006.0, 471.0]
+
+[node name="blackRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.52549)
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0588235, 0.0588235, 0.0588235, 1)
 
 [node name="TagButton" type="Button" parent="."]
 anchors_preset = 3
@@ -60,6 +84,26 @@ theme_override_colors/font_color = Color(0.976471, 0.847059, 0.286275, 1)
 theme_override_fonts/font = ExtResource("3_3c3vy")
 theme_override_font_sizes/font_size = 350
 text = "60"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 2648.0
+offset_top = 72.0
+offset_right = 3565.0
+offset_bottom = 176.0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_fonts/font = ExtResource("3_3c3vy")
+theme_override_font_sizes/font_size = 100
+text = "Distance to Lion: "
+horizontal_alignment = 1
+
+[node name="distanceToLion" type="Label" parent="."]
+offset_left = 2760.0
+offset_top = 185.0
+offset_right = 3439.0
+offset_bottom = 539.0
+theme_override_colors/font_color = Color(0, 0.509804, 0.929412, 1)
+theme_override_fonts/font = ExtResource("3_3c3vy")
+theme_override_font_sizes/font_size = 350
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
@@ -139,7 +183,11 @@ size_flags_vertical = 8
 color = Color(1, 1, 1, 0.356863)
 
 [node name="Portfolio" type="Sprite2D" parent="."]
+<<<<<<< HEAD
 position = Vector2(6904, 258)
+=======
+position = Vector2(5677, 246)
+>>>>>>> 9d7cc9bc8a4921ab438a1ecaa1ed7e1fa88ff028
 scale = Vector2(0.466319, 0.485344)
 texture = ExtResource("5_cbc5w")
 
@@ -156,6 +204,7 @@ icon = ExtResource("6_oudgg")
 flat = true
 expand_icon = true
 
+<<<<<<< HEAD
 [node name="Label" type="Label" parent="."]
 offset_left = 1593.0
 offset_top = 93.0
@@ -169,6 +218,64 @@ text = "Distance to lion:"
 [node name="distanceToLion" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+=======
+[node name="gameOverPanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1401.0
+offset_top = -471.0
+offset_right = 1401.0
+offset_bottom = 471.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hl24h")
+
+[node name="game over label" type="Label" parent="gameOverPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -674.0
+offset_top = 231.0
+offset_right = 674.0
+offset_bottom = 435.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3c3vy")
+theme_override_font_sizes/font_size = 200
+text = "GAME OVER"
+
+[node name="try again button" type="Button" parent="gameOverPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 547.0
+offset_top = -400.0
+offset_right = 1221.0
+offset_bottom = -113.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_3c3vy")
+theme_override_font_sizes/font_size = 100
+text = "TRY AGAIN"
+
+[node name="quit button" type="Button" parent="gameOverPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1581.0
+offset_top = -399.0
+offset_right = 2255.0
+offset_bottom = -112.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_3c3vy")
+theme_override_font_sizes/font_size = 100
+text = "QUIT"
+>>>>>>> 9d7cc9bc8a4921ab438a1ecaa1ed7e1fa88ff028
 
 [connection signal="pressed" from="TagButton" to="." method="_on_tag_button_pressed"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
@@ -177,3 +284,5 @@ offset_bottom = 23.0
 [connection signal="pressed" from="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/BackToMain" to="." method="_on_back_to_main_pressed"]
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="gameOverPanel/try again button" to="." method="_on_try_again_button_pressed"]
+[connection signal="pressed" from="gameOverPanel/quit button" to="." method="_on_quit_button_pressed"]

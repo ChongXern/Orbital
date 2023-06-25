@@ -59,12 +59,14 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c71ig"]
-radius = 452.0
-height = 1446.0
+radius = 767.0
+height = 1534.0
 
 [node name="npc4" type="Area2D"]
+y_sort_enabled = true
 scale = Vector2(0.2, 0.2)
 collision_layer = 8
+collision_mask = 2
 script = ExtResource("1_bwqh0")
 metadata/_edit_horizontal_guides_ = [186.0, -186.0]
 metadata/_edit_vertical_guides_ = [-186.0]

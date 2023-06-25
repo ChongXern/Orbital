@@ -1,8 +1,11 @@
 extends CanvasLayer
 signal pressed_tag
+<<<<<<< HEAD
+=======
 signal message_disappear
 @onready var PauseMenu = $PauseMenu
 var score = 100
+>>>>>>> origin/testing
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,6 +14,21 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+<<<<<<< HEAD
+	pass
+
+func show_message(text):
+	$Message.text = text
+	$Message.show()
+	$MessageTimer.start()
+
+func _on_message_timer_timeout():
+	pass
+
+func _on_tag_button_pressed():
+	show_message("found ally!")
+	await $MessageTimer.timeout
+=======
 	if Input.is_action_pressed("ui_cancel"):
 		PauseMenu.visible = true
 		get_tree().paused = true
@@ -45,3 +63,4 @@ func _on_exit_button_pressed():
 func _on_pause_button_pressed():
 	get_tree().paused = true
 	PauseMenu.visible = true
+>>>>>>> origin/testing

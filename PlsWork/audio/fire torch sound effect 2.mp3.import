@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://41ibwsk8iprt"
+path="res://.godot/imported/fire torch sound effect 2.mp3-135843c8edfdf5fdd7af5ba29fb2f700.mp3str"
+
+[deps]
+
+source_file="res://audio/fire torch sound effect 2.mp3"
+dest_files=["res://.godot/imported/fire torch sound effect 2.mp3-135843c8edfdf5fdd7af5ba29fb2f700.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
