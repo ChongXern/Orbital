@@ -59,7 +59,7 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0.976471, 0.847059, 0.286275, 1)
 theme_override_fonts/font = ExtResource("3_3c3vy")
 theme_override_font_sizes/font_size = 350
-text = "100"
+text = "60"
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
@@ -139,7 +139,7 @@ size_flags_vertical = 8
 color = Color(1, 1, 1, 0.356863)
 
 [node name="Portfolio" type="Sprite2D" parent="."]
-position = Vector2(3899, 235)
+position = Vector2(6904, 258)
 scale = Vector2(0.466319, 0.485344)
 texture = ExtResource("5_cbc5w")
 
@@ -155,6 +155,20 @@ grow_horizontal = 0
 icon = ExtResource("6_oudgg")
 flat = true
 expand_icon = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1593.0
+offset_top = 93.0
+offset_right = 4032.0
+offset_bottom = 286.0
+theme_override_colors/font_color = Color(0.392157, 0.572549, 0.819608, 1)
+theme_override_fonts/font = ExtResource("3_3c3vy")
+theme_override_font_sizes/font_size = 200
+text = "Distance to lion:"
+
+[node name="distanceToLion" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="pressed" from="TagButton" to="." method="_on_tag_button_pressed"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]

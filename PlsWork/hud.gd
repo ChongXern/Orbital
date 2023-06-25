@@ -2,8 +2,10 @@ extends CanvasLayer
 signal pressed_tag
 signal message_disappear
 @onready var PauseMenu = $PauseMenu
-#@onready var player_animation = get_parent().get_node("player")
-var score = 100
+var lionDistance: int
+
+@onready var player_animation = get_parent().get_node("player")
+var score = 60
 var coins = Global.coins
 
 # Called when the node enters the scene tree for the first time.
@@ -16,6 +18,7 @@ func _process(delta):
 	if Input.is_action_pressed("ui_cancel"):
 		PauseMenu.visible = true
 		get_tree().paused = true
+		$distanceToLion.text = str(lionDistance / 60, "m")
  
 func _on_tag_button_pressed():
 	$MessageTimer.start()
@@ -23,6 +26,10 @@ func _on_tag_button_pressed():
 		$Tick.show()
 		$ScoreTimer.stop()
 		$TagButton.hide()
+		get_tree().paused = true
+		await get_tree().create_timer(3).timeout
+		#show game over
+		$gameOverPanel.show()
 		coins += score
 		Global.coins = coins
 		
@@ -37,6 +44,10 @@ func _on_score_timer_timeout():
 	update_score(score)
 	if score == 0:
 		$Score.text = "times up!"
+		$Coin.hide()
+		get_tree().paused = false
+		get_tree().change_scene_to_file("res://game_over.tscn")
+
 
 func update_score(score):
 	$Score.text = str(score)
@@ -59,4 +70,6 @@ func _on_back_to_main_pressed():
 	get_tree().paused = false
 	update_score(coins)
 	get_tree().change_scene_to_file("res://start_menu.tscn")
-	
+
+func _on_world_branch_4_lion_distance(distance):
+	lionDistance = distance - 500
