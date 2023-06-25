@@ -77,6 +77,27 @@ func handleInput():
 
 
 func _physics_process(delta):
+	var velocity = Vector2.ZERO
+	if Input.is_action_pressed("up"):
+		velocity.y -= 1
+	if Input.is_action_pressed("down"):
+		velocity.y += 1
+	if Input.is_action_pressed("right"):
+		current_dir = "right"
+		velocity.x += 1
+	if Input.is_action_pressed("left"):
+		current_dir = "left"
+		velocity.x -= 1
+	compute_animation(current_dir)
+
+	if velocity.length() > 0:
+		velocity = velocity.normalized() * speed
+		$AnimatedSprite2D.play()
+	# else:
+		# $AnimatedSprite2D.stop()
+	#position += velocity * delta
+	#position.x = clamp(position.x, 0, screen_size.x)
+	#position.y = clamp(position.y, 0, screen_size.y)
 	handleInput()
 	compute_animation(current_dir)
 	move_and_slide()

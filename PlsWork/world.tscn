@@ -2972,7 +2972,7 @@ texture_region_size = Vector2i(80, 80)
 
 [sub_resource type="TileSet" id="TileSet_qjq0v"]
 tile_size = Vector2i(80, 80)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 4
 sources/0 = SubResource("TileSetAtlasSource_r0hfa")
 sources/1 = SubResource("TileSetAtlasSource_hs0is")
 sources/2 = SubResource("TileSetAtlasSource_qw3vn")
@@ -3089,7 +3089,7 @@ physics_layer_0/collision_layer = 32
 sources/0 = SubResource("TileSetAtlasSource_4o47a")
 sources/1 = SubResource("TileSetAtlasSource_rrf6m")
 
-[node name="world branch_4" type="Node2D"]
+[node name="world" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_218ld")
 metadata/_edit_horizontal_guides_ = [1918.0, 2794.0, 254.0]

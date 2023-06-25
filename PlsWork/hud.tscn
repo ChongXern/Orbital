@@ -118,6 +118,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="PauseMenu"]
 layout_mode = 1
@@ -134,6 +135,7 @@ grow_vertical = 2
 [node name="PanelContainer" type="PanelContainer" parent="PauseMenu/CenterContainer"]
 custom_minimum_size = Vector2(1000, 500)
 layout_mode = 2
+mouse_filter = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="PauseMenu/CenterContainer/PanelContainer"]
 layout_mode = 2
@@ -163,6 +165,13 @@ theme_override_fonts/font = ExtResource("3_3c3vy")
 theme_override_font_sizes/font_size = 100
 text = "EXIT"
 
+[node name="BackToMain" type="Button" parent="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("3_3c3vy")
+theme_override_font_sizes/font_size = 100
+text = "Home Menu"
+
 [node name="ColorRect" type="ColorRect" parent="PauseMenu"]
 layout_mode = 1
 anchors_preset = 15
@@ -174,7 +183,11 @@ size_flags_vertical = 8
 color = Color(1, 1, 1, 0.356863)
 
 [node name="Portfolio" type="Sprite2D" parent="."]
+<<<<<<< HEAD
+position = Vector2(6904, 258)
+=======
 position = Vector2(5677, 246)
+>>>>>>> 9d7cc9bc8a4921ab438a1ecaa1ed7e1fa88ff028
 scale = Vector2(0.466319, 0.485344)
 texture = ExtResource("5_cbc5w")
 
@@ -191,6 +204,21 @@ icon = ExtResource("6_oudgg")
 flat = true
 expand_icon = true
 
+<<<<<<< HEAD
+[node name="Label" type="Label" parent="."]
+offset_left = 1593.0
+offset_top = 93.0
+offset_right = 4032.0
+offset_bottom = 286.0
+theme_override_colors/font_color = Color(0.392157, 0.572549, 0.819608, 1)
+theme_override_fonts/font = ExtResource("3_3c3vy")
+theme_override_font_sizes/font_size = 200
+text = "Distance to lion:"
+
+[node name="distanceToLion" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+=======
 [node name="gameOverPanel" type="Panel" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
@@ -247,12 +275,14 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_3c3vy")
 theme_override_font_sizes/font_size = 100
 text = "QUIT"
+>>>>>>> 9d7cc9bc8a4921ab438a1ecaa1ed7e1fa88ff028
 
 [connection signal="pressed" from="TagButton" to="." method="_on_tag_button_pressed"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="pressed" from="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="PauseMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/BackToMain" to="." method="_on_back_to_main_pressed"]
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="gameOverPanel/try again button" to="." method="_on_try_again_button_pressed"]
 [connection signal="pressed" from="gameOverPanel/quit button" to="." method="_on_quit_button_pressed"]

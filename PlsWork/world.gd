@@ -64,6 +64,14 @@ func _ready():
 	score = 60
 	#player.killed.connect(_on_player_killed)
 
+<<<<<<< HEAD
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+	
+	
+=======
+>>>>>>> 9d7cc9bc8a4921ab438a1ecaa1ed7e1fa88ff028
 #shows tag button on collition with any npc/ally
 func _on_ally_hit():
 	$hud/TagButton.show()
