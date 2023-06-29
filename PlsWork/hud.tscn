@@ -212,6 +212,7 @@ offset_right = 1401.0
 offset_bottom = 471.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_hl24h")
 
 [node name="game over label" type="Label" parent="gameOverPanel"]

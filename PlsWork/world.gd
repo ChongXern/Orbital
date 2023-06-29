@@ -32,7 +32,7 @@ func _physics_process(delta):
 		if $lion.position.distance_to($player.position) > 3:
 			$lion.velocity = -targetPos * 525
 	$lion.move_and_slide()
-	print_debug(compute_pythagoras_distance())
+	#print_debug(compute_pythagoras_distance())
 	if compute_pythagoras_distance() <= 500:
 		_on_player_killed()
 		#print_debug(get_distance_to_lion())
@@ -60,7 +60,7 @@ func _ready():
 	$hud/sprayButton.hide()
 	$hud/hornButton.hide()
 	#$hud/game_over.hide()
-	$hud/gameOverPanel.hide()
+	#$hud/gameOverPanel.hide()
 	score = 60
 	#player.killed.connect(_on_player_killed)
 
@@ -82,9 +82,11 @@ func _on_score_timer_timeout():
 	Global
 
 func _on_player_killed():
-	get_tree().paused = true
+	#get_tree().paused = true
 	$hud/blackRect.show()
-	$hud/gameOverPanel.show()
+	#$hud/gameOverPanel.show()
+	get_tree().change_scene_to_file("res://game_over.tscn")
+	
 	#$hud/game_over.show()
 	
 	

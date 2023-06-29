@@ -1,0 +1,91 @@
+[gd_scene load_steps=15 format=3 uid="uid://cnpi82orclwbn"]
+
+[ext_resource type="Script" path="res://loading_scene.gd" id="1_47y0x"]
+[ext_resource type="Texture2D" uid="uid://c6oy7pxfu3vfg" path="res://sprite animations/lion/lion_1.png" id="2_j6ot3"]
+[ext_resource type="Texture2D" uid="uid://l4hg316iov7v" path="res://sprite animations/lion/lion_2.png" id="3_ofegx"]
+[ext_resource type="Texture2D" uid="uid://ddm71k8f21mu8" path="res://sprite animations/lion/lion_3.png" id="4_5u20o"]
+[ext_resource type="Texture2D" uid="uid://4015bwkfqn55" path="res://sprite animations/lion/lion_4.png" id="5_cyod5"]
+[ext_resource type="Texture2D" uid="uid://dsx6xoben3c5t" path="res://sprite animations/lion/lion_5.png" id="6_8jysp"]
+[ext_resource type="Texture2D" uid="uid://dpfc57vg1mhjv" path="res://sprite animations/lion/lion_6.png" id="7_ijync"]
+[ext_resource type="Texture2D" uid="uid://n6plyoioxv3x" path="res://sprite animations/lion/lion_7.png" id="8_507ki"]
+[ext_resource type="Texture2D" uid="uid://dsi3x8s4xfhdu" path="res://sprite animations/lion/lion_8.png" id="9_uov7u"]
+[ext_resource type="Texture2D" uid="uid://dg5edw1wcrhrb" path="res://sprite animations/lion/lion_9.png" id="10_h2p4s"]
+[ext_resource type="Texture2D" uid="uid://csb2lok5qdpdx" path="res://sprite animations/lion/lion_10.png" id="11_7rw3k"]
+[ext_resource type="Texture2D" uid="uid://chhwplrq0xf3s" path="res://sprite animations/lion/lion_11.png" id="12_gmawx"]
+[ext_resource type="Texture2D" uid="uid://dv83g1a1ld43g" path="res://sprite animations/lion/lion_12.png" id="13_e58bk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_45tnp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j6ot3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ofegx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5u20o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cyod5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8jysp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ijync")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_507ki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_uov7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_h2p4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7rw3k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gmawx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_e58bk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="loading_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_47y0x")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3758, 1056)
+scale = Vector2(0.41693, 0.421216)
+sprite_frames = SubResource("SpriteFrames_45tnp")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 1646.0
+offset_top = 1598.0
+offset_right = 5779.0
+offset_bottom = 1806.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 200
+rounded = true

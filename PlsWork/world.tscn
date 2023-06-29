@@ -81,6 +81,7 @@ texture_region_size = Vector2i(80, 80)
 
 [sub_resource type="TileSet" id="TileSet_0wx88"]
 tile_size = Vector2i(80, 80)
+navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_xaebd")
 sources/1 = SubResource("TileSetAtlasSource_oy117")
 
@@ -3030,8 +3031,9 @@ grow_horizontal = 1
 [node name="player" parent="." instance=ExtResource("1_vur2i")]
 position = Vector2(25082, 1578)
 
-[node name="lion" parent="." instance=ExtResource("3_8py68")]
+[node name="lion" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_8py68")]
 position = Vector2(26837, 2145)
+player = NodePath("../player")
 
 [node name="Lion TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_0wx88")

@@ -50,8 +50,9 @@ func _on_score_timer_timeout():
 		$Score.text = "times up!"
 		$Coin.hide()
 		$blackRect.show()
-		get_tree().paused = true
+		get_tree().paused = false
 		$gameOverPanel.show()
+		get_tree().change_scene_to_file("res://game_over.tscn")
 
 
 func _on_resume_button_pressed():

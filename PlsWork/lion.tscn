@@ -67,6 +67,8 @@ z_index = 1
 y_sort_enabled = true
 collision_layer = 8
 collision_mask = 3
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_nee8n")
 metadata/_edit_horizontal_guides_ = [-286.0, 283.0]
 metadata/_edit_vertical_guides_ = [-555.0]
@@ -81,3 +83,12 @@ position = Vector2(-1.52588e-05, 7.62939e-06)
 scale = Vector2(0.348635, 0.348635)
 sprite_frames = SubResource("SpriteFrames_n5g63")
 animation = &"lion running"
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
